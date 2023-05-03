@@ -1,0 +1,94 @@
+body {
+  background-color: #eeebeb;
+  font-family: Arial, sans-serif;
+  margin: 0; /* reset the default margin */
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* use min-height instead of height to allow the content to expand */
+  width: 100%; /* use 100% width to expand the container to fill the screen */
+  background-color: #eeebeb;
+  padding: 2rem;
+}
+
+.title {
+  color: gray;
+  font-weight: bold;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 60%;
+  height: 19em;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  padding: 2rem;
+  border: 1px solid #dcd9d9;
+
+}
+
+input {
+  border: 1px solid lightgray;
+  padding: 0.5rem;
+  font-size: 1rem;
+  justify-content: center;
+  align-items: center;
+  width: 80%; /* set the width to 50% */
+  box-sizing: border-box;
+  background-color: white;
+  height: 4rem;
+}
+
+input::placeholder {
+  color: #989898;
+  opacity: 0.5;
+}
+
+#connexion {
+  background-color: #1acead;
+  border: 1px solid lightgray;
+  padding: 0.5rem;
+  font-weight: bold;
+  font-size: 1rem;
+  color: #f5f2f2; /* set the color of the text to gray */
+  cursor: pointer;
+  transition: transform 0.3s; /* use transform instead of background-color for the animation */
+  height: 4rem;
+  margin: 0 auto; /* center the button horizontally */
+  width: 10rem; /* set the initial width of the button */
+}
+
+#connexion:hover {
+  transform: scale(1.1); /* scale up the button on hover */
+  background-color: #2fee81;
+}
+
+/* add a new style rule for the white background */
+.container::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  z-index: -1; /* move the background behind the container */
+}
+
+.error-message {
+  color: red;
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  padding: 0.5rem 1rem;
+  background-color: #eeebeb;
+}

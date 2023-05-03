@@ -1,0 +1,32 @@
+<form #createForm="ngForm" (ngSubmit)="onSubmit(createForm)">
+  <div>
+    <label for="acronym">Acronyme :</label>
+    <input type="text" id="acronym" name="acronym" ngModel required />
+  </div>
+  <div>
+    <label for="eventName">Nom de l'événement :</label>
+    <input type="text" id="eventName" name="eventName" ngModel required />
+  </div>
+  <div>
+    <label for="location">Lieu :</label>
+    <input type="text" id="location" name="location" ngModel required />
+  </div>
+  <div>
+    <label for="description">Description :</label>
+    <textarea id="description" name="description" ngModel></textarea>
+  </div>
+  <div>
+    <label for="registrationStartDate">Date de début des inscriptions :</label>
+    <input type="date" id="registrationStartDate" name="registrationStartDate" ngModel required />
+  </div>
+  <div>
+    <label for="registrationEndDate">Date de fin des inscriptions :</label>
+    <input type="date" id="registrationEndDate" name="registrationEndDate" ngModel required />
+  </div>
+  <div>
+    <label for="maxParticipants">Nombre maximum de participants :</label>
+    <input type="number" id="maxParticipants" name="maxParticipants" ngModel required />
+  </div>
+  <button type="submit" [disabled]="!createForm.valid">Créer un événement</button>
+</form>
+

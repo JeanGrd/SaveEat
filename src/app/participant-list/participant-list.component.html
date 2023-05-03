@@ -1,0 +1,13 @@
+<div class="container">
+  <h1 class="text-center">Liste des participants</h1>
+  <app-export-csv-button [eventId]="eventId"></app-export-csv-button>
+  <div class="event-list">
+    <div class="event-card" *ngFor="let participant of participants">
+      <h3>{{ participant.first_name }} {{ participant.last_name }}</h3>
+      <p>{{ participant.email }}</p>
+      <button class="btn-edit" (click)="updateParticipant(eventId ?? 0, participant.id)">Modifier</button>
+      <button class="btn-delete" (click)="deleteParticipant(participant.id)">Supprimer</button>
+    </div>
+  </div>
+</div>
+s

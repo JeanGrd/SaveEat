@@ -1,0 +1,40 @@
+.event-details {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+.event-card {
+  max-width: 600px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.event-card h2 {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.event-acronym {
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.event-location,
+.event-dates,
+.event-max-participants {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.event-description {
+  font-size: 14px;
+  line-height: 1.5;
+}
