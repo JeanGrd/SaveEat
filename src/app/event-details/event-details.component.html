@@ -1,15 +1,4 @@
-<div class="event-details">
-  <div class="event-card" *ngFor="let event of event">
-    <h2>{{ event.event_name }}</h2>
-    <p class="event-acronym">Acronyme : {{ event.acronym }}</p>
-    <p class="event-location">Location : {{ event.location }}</p>
-    <p class="event-dates">Date :
-      {{ event.registration_start_date | date:'shortDate' }} - {{ event.registration_end_date | date:'shortDate' }}
-    </p>
-    <p class="event-max-participants">Nombre de participants maximum : {{ event.max_participants }}</p>
-    <p class="event-description">Description : {{ event.description }}</p>
-  </div>
-</div>
-<app-stats-participants [eventId]="eventId"></app-stats-participants>
-<app-participant-list [eventId]="eventId"></app-participant-list>
+<app-event-card></app-event-card>
+<app-stats-participants></app-stats-participants>
+<app-participant-list></app-participant-list>
 

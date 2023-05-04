@@ -1,7 +1,7 @@
-import {Component, OnInit, Input} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ParticipantService} from "../participant.service";
 import {MessageService} from "../message.service";
-import {Router} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-participant-list',
@@ -9,22 +9,26 @@ import {Router} from "@angular/router";
   styleUrls: ['./participant-list.component.css']
 })
 export class ParticipantListComponent implements OnInit{
-  @Input() eventId?: number;
+  eventId?: number;
   participants: any[] = [];
 
   constructor(
     private participantService: ParticipantService,
     private messageService: MessageService,
     private router: Router,
+    private route: ActivatedRoute,
 
   ) { }
 
   ngOnInit(): void {
-    if (this.eventId !== undefined) {
-      this.participantService.getParticipants(this.eventId).subscribe((participants: any[]) => {
-        this.participants = participants;
-      });
-    }
+    this.route.params.subscribe((params) => {
+      this.eventId = +params['id'];
+      if (this.eventId !== undefined) {
+        this.participantService.getParticipants(this.eventId).subscribe((participants: any[]) => {
+          this.participants = participants;
+        });
+      }
+    });
   }
 
   updateParticipant(eventId: number, participantId: number): void {

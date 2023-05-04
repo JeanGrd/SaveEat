@@ -11,10 +11,12 @@ import {LoginGuard} from "./login.guard";
 import {DashboardComponent} from "./dashboard/dashboard.component";
 import {HomeComponent} from "./home/home.component";
 import {NotreMissionComponent} from "./notre-mission/notre-mission.component";
+import {EventListOpenComponent} from "./event-list-open/event-list-open.component";
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'notre-mission', component: NotreMissionComponent },
+  { path: 'events', component: EventListOpenComponent },
   { path: 'login', component: AuthAdminComponent, canActivate: [LoginGuard] },
   { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
   { path: 'dashboard/create', component: EventCreateComponent, canActivate: [AuthGuard] },

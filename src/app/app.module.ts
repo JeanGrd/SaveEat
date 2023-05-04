@@ -18,6 +18,9 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
 import { NotreMissionComponent } from './notre-mission/notre-mission.component';
+import { EventsComponent } from './events/events.component';
+import { EventListOpenComponent } from './event-list-open/event-list-open.component';
+import { EventCardComponent } from './event-card/event-card.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +38,9 @@ import { NotreMissionComponent } from './notre-mission/notre-mission.component';
     HomeComponent,
     HeaderComponent,
     NotreMissionComponent,
+    EventsComponent,
+    EventListOpenComponent,
+    EventCardComponent,
   ],
   imports: [
     BrowserModule,

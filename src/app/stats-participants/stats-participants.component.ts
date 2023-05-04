@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {StatistiqueService} from "../statistique.service";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-stats-participants',
@@ -7,9 +8,9 @@ import {StatistiqueService} from "../statistique.service";
   styleUrls: ['./stats-participants.component.css']
 })
 export class StatsParticipantsComponent implements OnInit {
-  @Input() eventId?: number;
+  eventId?: number;
   total: any;
-  constructor(private Service: StatistiqueService) {}
+  constructor(private route: ActivatedRoute, private Service: StatistiqueService) {}
 
   ngOnInit(): void {
     this.getTotalParticipants();
@@ -18,12 +19,12 @@ export class StatsParticipantsComponent implements OnInit {
     }, 500);
   }
 
-
   getTotalParticipants() {
-    this.Service.getTotalParticipants(this.eventId!).subscribe((total) => {
-      this.total = total;
+    this.route.params.subscribe((params) => {
+      this.eventId = +params['id'];
+      this.Service.getTotalParticipants(this.eventId).subscribe((total) => {
+        this.total = total;
+      });
     });
   }
-
-
 }
