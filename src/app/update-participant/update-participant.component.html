@@ -1,48 +1,19 @@
-<form *ngIf="isDataLoaded" #form="ngForm" (ngSubmit)="onSubmit(form)">
-  <div class="form-group">
-    <label for="firstName">Prénom</label>
-    <input
-      type="text"
-      id="firstName"
-      name="firstName"
-      class="form-control"
-      [(ngModel)]="participant.first_name"
-      required
-    />
-  </div>
-  <div class="form-group">
-    <label for="lastName">Nom</label>
-    <input
-      type="text"
-      id="lastName"
-      name="lastName"
-      class="form-control"
-      [(ngModel)]="participant.last_name"
-      required
-    />
-  </div>
-  <div class="form-group">
-    <label for="email">E-mail</label>
-    <input
-      type="email"
-      id="email"
-      name="email"
-      class="form-control"
-      [(ngModel)]="participant.email"
-      required
-    />
-  </div>
-  <div class="form-group">
-    <label for="phoneNumber">Numéro de téléphone</label>
-    <input
-      type="tel"
-      id="phoneNumber"
-      name="phoneNumber"
-      class="form-control"
-      [(ngModel)]="participant.phone_number"
-      required
-    />
-  </div>
-  <button type="submit" class="btn btn-primary">Mettre à jour</button>
-
-</form>
+<div class="container">
+  <div class="form-background"></div>
+  <h1 class="title">Mettre à jour les informations</h1>
+  <form *ngIf="isDataLoaded" #form="ngForm" (ngSubmit)="onSubmit(form)">
+    <div>
+      <input type="text" id="firstName" name="firstName" class="form-control" [(ngModel)]="participant.first_name" required placeholder="Prénom" />
+    </div>
+    <div>
+      <input type="text" id="lastName" name="lastName" class="form-control" [(ngModel)]="participant.last_name" required placeholder="Nom" />
+    </div>
+    <div>
+      <input type="email" id="email" name="email" class="form-control" [(ngModel)]="participant.email" required placeholder="E-mail" />
+    </div>
+    <div>
+      <input type="tel" id="phoneNumber" name="phoneNumber" class="form-control" [(ngModel)]="participant.phone_number" required placeholder="Numéro de téléphone" />
+    </div>
+    <button type="submit" [disabled]="!form.valid || form.pristine">Mettre à jour</button>
+  </form>
+</div>

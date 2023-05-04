@@ -1,13 +1,17 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600|Open+Sans:400,400i,700&display=swap">
+
 <div class="container">
-  <div style="height: 30px;"></div> <!-- Ajoutez cette ligne pour ajouter de l'espace -->
-  <button class="btn-create" (click)="create()">Création d'un évènement</button>
+  <div style="height: 30px;"></div>
+  <div class="center-horizontal">
+    <button class="btn-create" (click)="create()">Création d'un évènement</button>
+  </div>
   <div class="event-list">
-    <div class="event-card" *ngFor="let event of events">
+    <div class="event-card" [ngClass]="{'dark': index % 2 === 1}" *ngFor="let event of events; let index = index">
       <h3>{{ event.event_name }}</h3>
       <p>{{ event.description }}</p>
       <button class="btn-edit" (click)="showDetails(event.id)">Détails</button>
+      <span style="width: 10px; display: inline-block;"></span>
       <button class="btn-delete" (click)="deleteEvent(event.id)">Supprimer</button>
     </div>
   </div>
 </div>
-

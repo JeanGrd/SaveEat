@@ -1,54 +1,55 @@
-/* Style général */
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Open Sans', sans-serif;
+  background-color: #f5f5f5;
 }
 
 .container {
-  max-width: 800px;
+  width: 70%;
   margin: 0 auto;
-  padding: 20px;
-}
-
-h1.text-center {
-  color: #444;
-  font-size: 3rem;
-  font-weight: 500;
-  text-align: center;
-  margin-bottom: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
 }
 
 .event-list {
+  margin-top: 2rem;
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
 
-/* Style des cartes d'événements */
+.center-horizontal {
+  display: flex;
+  justify-content: center;
+}
+
+
+
 .event-card {
   background-color: #f0f0f0;
   border-radius: 5px;
-  padding: 15px;
+  padding: 20px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
 }
 
+.event-card.dark {
+  background-color: #8f8e8e;
+  color: #fff;
+}
+
 .event-card h3 {
+  font-family: 'Montserrat', sans-serif;
   font-size: 1.5rem;
   font-weight: 500;
-  color: #444;
   margin-bottom: 10px;
 }
 
 .event-card p {
-  color: #666;
-  font-size: 1rem;
-  margin-bottom: 10px;
+  font-size: 1.1rem;
+  margin-bottom: 15px;
 }
 
-/* Style des boutons */
 .btn-edit,
 .btn-delete {
-  background-color: #2196F3;
-  color: #fff;
   font-weight: 500;
   padding: 10px 20px;
   border: none;
@@ -59,25 +60,32 @@ h1.text-center {
   display: inline-block;
   font-size: 1rem;
   transition-duration: 0.4s;
+  margin-right: 5px;
+}
+
+.btn-edit {
+  background-color: #72b3e8;
+  color: #fff;
 }
 
 .btn-delete {
-  background-color: #f44336;
+  background-color: #f88888;
+  color: #fff;
 }
 
 .btn-edit:hover,
 .btn-delete:hover {
-  opacity: 0.8;
+  opacity: 0.6;
 }
 
 .btn-create {
-  background-color: #4CAF50;
+  background-color: #1acead;
   color: #fff;
   font-weight: 500;
-  padding: 12px 24px;
-  margin-bottom: 30px;
+  padding: 17px 24px;
+  margin: 30px 0;
   border: none;
-  border-radius: 5px;
+  border-radius: 0;
   cursor: pointer;
   text-align: center;
   text-decoration: none;
@@ -87,5 +95,5 @@ h1.text-center {
 }
 
 .btn-create:hover {
-  opacity: 0.8;
+  opacity: 0.6;
 }

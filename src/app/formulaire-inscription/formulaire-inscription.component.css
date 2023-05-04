@@ -4,6 +4,16 @@ body {
   margin: 0;
 }
 
+button[type="submit"][disabled] {
+  opacity: 0.5;
+}
+
+button[type="submit"][disabled]:hover {
+  transform: none;
+  background-color: #1acead;
+  cursor: not-allowed;
+}
+
 .container {
   display: flex;
   flex-direction: column;
@@ -52,7 +62,7 @@ input::placeholder {
   opacity: 0.5;
 }
 
-#inscription {
+button {
   background-color: #1acead;
   border: 1px solid lightgray;
   padding: 0.5rem;
@@ -66,7 +76,7 @@ input::placeholder {
   width: 10rem;
 }
 
-#inscription:hover {
+button:hover {
   transform: scale(1.1);
   background-color: #2fee81;
 }
