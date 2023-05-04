@@ -19,10 +19,10 @@ export class EventCreateComponent {
   onSubmit(form: NgForm) {
     if (form.valid) {
       const eventData = {
-        acronym: form.value.acronym,
-        event_name: form.value.eventName,
-        location: form.value.location,
-        description: form.value.description,
+        acronym: form.value.acronym.toString(),
+        event_name: form.value.eventName.toString(),
+        location: form.value.location.toString(),
+        description: form.value.description.toString(),
         registration_start_date: form.value.registrationStartDate,
         registration_end_date: form.value.registrationEndDate,
         max_participants: form.value.maxParticipants,
@@ -32,7 +32,7 @@ export class EventCreateComponent {
         (response) => {
           console.log('Event created', response);
           this.messageService.showMessage('Événement créé avec succès !');
-          this.router.navigate(['/events']); // Ajoutez l'URL appropriée pour la page principale
+          this.router.navigate(['/dashboard']); // Ajoutez l'URL appropriée pour la page principale
         },
         (error) => {
           console.error('Error creating event', error);

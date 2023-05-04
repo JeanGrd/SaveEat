@@ -20,7 +20,7 @@ export class AuthAdminComponent {
       (data) => {
         if (data.message === 'Logged in') {
           this.authService.setToken(data.token);
-          this.router.navigate(['/events']);
+          this.router.navigate(['/dashboard']);
         } else if (data.error === 'Invalid account') {
           this.errorMessage = 'Nom d\'utilisateur ou mot de passe incorrect';
         } else {

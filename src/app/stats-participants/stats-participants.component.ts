@@ -1,6 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {StatistiqueService} from "../statistique.service";
-import {forkJoin} from "rxjs";
 
 @Component({
   selector: 'app-stats-participants',

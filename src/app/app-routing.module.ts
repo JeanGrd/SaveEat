@@ -8,13 +8,18 @@ import {AuthAdminComponent} from "./auth-admin/auth-admin.component";
 
 import { AuthGuard } from './auth.guard';
 import {LoginGuard} from "./login.guard";
+import {DashboardComponent} from "./dashboard/dashboard.component";
+import {HomeComponent} from "./home/home.component";
+import {NotreMissionComponent} from "./notre-mission/notre-mission.component";
 
 const routes: Routes = [
-  { path: '', component: AuthAdminComponent, canActivate: [LoginGuard] },
-  { path: 'events', component: EventListComponent, canActivate: [AuthGuard] },
-  { path: 'events/create', component: EventCreateComponent, canActivate: [AuthGuard] },
-  { path: 'event-details/:id', component: EventDetailsComponent, canActivate: [AuthGuard] },
-  { path: 'event-details/:eventId/participants/:participantId', component: UpdateParticipantComponent, canActivate: [AuthGuard] },
+  { path: '', component: HomeComponent },
+  { path: 'notre-mission', component: NotreMissionComponent },
+  { path: 'login', component: AuthAdminComponent, canActivate: [LoginGuard] },
+  { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
+  { path: 'dashboard/create', component: EventCreateComponent, canActivate: [AuthGuard] },
+  { path: 'dashboard/event-details/:id', component: EventDetailsComponent, canActivate: [AuthGuard] },
+  { path: 'dashboard/event-details/:eventId/participants/:participantId', component: UpdateParticipantComponent, canActivate: [AuthGuard] },
 ];
 
 @NgModule({

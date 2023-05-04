@@ -1,0 +1,266 @@
+
+.wrapper {
+  margin-bottom: 5em;
+  padding: 5em;
+}
+
+.wrapper.style1 {
+  padding: 0;
+}
+
+.wrapper.style2 {
+  background-color: #83d3c9;
+  background-position: bottom left, bottom right;
+  background-repeat: no-repeat, no-repeat;
+  background-size: 25em, 25em;
+  color: #fff;
+}
+
+.wrapper.style2 input[type="button"]:hover,
+.wrapper.style2 input[type="submit"]:hover,
+.wrapper.style2 input[type="reset"]:hover,
+.wrapper.style2 button:hover,
+.wrapper.style2 .button:hover {
+  background: rgba(255, 255, 255, 0.15) !important;
+}
+
+.wrapper.style2 input[type="button"].primary,
+.wrapper.style2 input[type="submit"].primary,
+.wrapper.style2 input[type="reset"].primary,
+.wrapper.style2 button.primary,
+.wrapper.style2 .button.primary {
+  background: #fff;
+  border-color: #fff;
+  color: #83d3c9 !important;
+}
+
+.wrapper.style2 input[type="button"].primary:hover,
+.wrapper.style2 input[type="submit"].primary:hover,
+.wrapper.style2 input[type="reset"].primary:hover,
+.wrapper.style2 button.primary:hover,
+.wrapper.style2 .button.primary:hover {
+  border-color: inherit !important;
+  color: #fff !important;
+}
+
+.wrapper.style3 {
+  background: #fff;
+  color: inherit;
+}
+
+.wrapper.style4 {
+  background: #fff;
+  color: inherit;
+  padding: 4em;
+}
+/* Wrapper */
+
+.wrapper {
+  margin-bottom: 4em;
+  padding: 4em 3em;
+}
+
+.wrapper.style4 {
+  padding: 3em;
+}
+
+/* Header */
+
+#header nav ul li {
+  margin-left: 1em;
+}
+
+/* Wrapper */
+
+.wrapper {
+  margin-bottom: 3em;
+  padding: 3em 2.5em;
+}
+
+.wrapper.special br {
+  display: none;
+}
+
+.wrapper.style1 {
+  padding: 0 2.5em;
+}
+
+.wrapper.style2 {
+  background-size: 15em;
+}
+
+.wrapper.style4 {
+  padding: 2.5em;
+}
+
+/* Banner */
+
+#banner {
+  background-size: 15em, 15em, auto, cover;
+}
+
+.wrapper.special-alt {
+  text-align: center;
+}
+
+.wrapper.style4 {
+  padding-bottom: 3em;
+}
+/* Wrapper */
+
+.wrapper {
+  margin-bottom: 2.5em;
+  padding: 2.25em 1.5em;
+}
+
+.wrapper.special br {
+  display: none;
+}
+
+.wrapper.style1 {
+  padding: 0 1.5em;
+}
+
+.wrapper.style2 {
+  background-size: 10em;
+  padding: 2.25em 1.5em;
+}
+
+.wrapper.style4 {
+  background-size: 10em;
+  padding: 1.5em 1.5em 3em 1.5em;
+}
+
+
+.wrapper.style2 input[type="button"]:hover,
+.wrapper.style2 input[type="submit"]:hover,
+.wrapper.style2 input[type="reset"]:hover,
+.wrapper.style2 button:hover,
+.wrapper.style2 .button:hover {
+  background: rgba(255, 255, 255, 0.15) !important;
+}
+
+.wrapper.style2 input[type="button"].primary,
+.wrapper.style2 input[type="submit"].primary,
+.wrapper.style2 input[type="reset"].primary,
+.wrapper.style2 button.primary,
+.wrapper.style2 .button.primary {
+  background: #fff;
+  border-color: #fff;
+  color: #83d3c9 !important;
+}
+
+.wrapper.style2 input[type="button"].primary:hover,
+.wrapper.style2 input[type="submit"].primary:hover,
+.wrapper.style2 input[type="reset"].primary:hover,
+.wrapper.style2 button.primary:hover,
+.wrapper.style2 .button.primary:hover {
+  border-color: inherit !important;
+  color: #fff !important;
+}
+
+
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+button,
+.button {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  -moz-transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+  -webkit-transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+  -ms-transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+  transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+  background: none;
+  border: solid 1px;
+  border-radius: 0;
+  color: inherit;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 0.8em;
+  font-weight: 900;
+  letter-spacing: 2px;
+  min-width: 18em;
+  padding: 0 0.75em;
+  line-height: 3.75em;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+input[type="button"]:hover,
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+button:hover,
+.button:hover {
+  background: rgba(188, 202, 206, 0.15);
+  border-color: inherit;
+}
+
+input[type="button"].primary,
+input[type="submit"].primary,
+input[type="reset"].primary,
+button.primary,
+.button.primary {
+  background: #83d3c9;
+  border-color: #83d3c9;
+  color: #fff !important;
+}
+
+input[type="button"].primary:hover,
+input[type="submit"].primary:hover,
+input[type="reset"].primary:hover,
+button.primary:hover,
+.button.primary:hover {
+  background: #96dad1 !important;
+  border-color: #96dad1 !important;
+}
+
+input[type="button"].fit,
+input[type="submit"].fit,
+input[type="reset"].fit,
+button.fit,
+.button.fit {
+  width: 100%;
+}
+
+input[type="button"].small,
+input[type="submit"].small,
+input[type="reset"].small,
+button.small,
+.button.small {
+  font-size: 0.7em;
+  min-width: 14em;
+  padding: 0.5em 0;
+}
+
+
+ul.buttons.stacked li:first-child {
+  padding: 0;
+}
+
+ul.buttons {
+  cursor: default;
+  list-style: none;
+  padding-left: 0;
+}
+
+ul.buttons:last-child {
+  margin-bottom: 0;
+}
+
+ul.buttons li {
+  display: inline-block;
+  padding: 0 0 0 1.5em;
+}
+
+ul.buttons li:first-child {
+  padding: 0;
+}
+
+ul.buttons.stacked li {
+  display: block;
+  padding: 1.5em 0 0 0;
+}

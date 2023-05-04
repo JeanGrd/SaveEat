@@ -52,7 +52,7 @@ export class UpdateParticipantComponent implements OnInit {
           (response) => {
             console.log('Participant updated', response);
             this.messageService.showMessage('Participant mis à jour avec succès !');
-            this.router.navigate(['/event-details', this.eventId]);
+            this.router.navigate(['dashboard/event-details', this.eventId]);
           },
           (error) => {
             console.error('Error updating participant', error);

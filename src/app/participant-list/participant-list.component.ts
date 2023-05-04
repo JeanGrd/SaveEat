@@ -28,7 +28,7 @@ export class ParticipantListComponent implements OnInit{
   }
 
   updateParticipant(eventId: number, participantId: number): void {
-    this.router.navigate(['event-details', eventId, 'participants', participantId]);
+    this.router.navigate(['dashboard/event-details', eventId, 'participants', participantId]);
   }
 
 

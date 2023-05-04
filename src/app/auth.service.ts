@@ -24,7 +24,7 @@ export class AuthService {
   }
 
   isLoggedIn(): boolean {
-    const token = localStorage.getItem('authToken');
+    const token = localStorage.getItem('token');
     return !!token;
   }
 }

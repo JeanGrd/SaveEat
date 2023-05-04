@@ -25,11 +25,11 @@ export class EventListComponent implements OnInit {
   }
 
   create(): void {
-    this.router.navigate(['/events/create']);
+    this.router.navigate(['/dashboard/create']);
   }
 
   showDetails(eventId: number): void {
-    this.router.navigate(['/event-details', eventId]);
+    this.router.navigate(['/dashboard/event-details', eventId]);
   }
 
   deleteEvent(eventId: number): void {

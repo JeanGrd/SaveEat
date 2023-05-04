@@ -14,6 +14,10 @@ import { UpdateParticipantComponent } from './update-participant/update-particip
 import { ExportCsvButtonComponent } from './export-csv-button/export-csv-button.component';
 import { StatsParticipantsComponent } from './stats-participants/stats-participants.component';
 import { AuthAdminComponent } from './auth-admin/auth-admin.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { HomeComponent } from './home/home.component';
+import { HeaderComponent } from './header/header.component';
+import { NotreMissionComponent } from './notre-mission/notre-mission.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +31,10 @@ import { AuthAdminComponent } from './auth-admin/auth-admin.component';
     ExportCsvButtonComponent,
     StatsParticipantsComponent,
     AuthAdminComponent,
+    DashboardComponent,
+    HomeComponent,
+    HeaderComponent,
+    NotreMissionComponent,
   ],
   imports: [
     BrowserModule,
