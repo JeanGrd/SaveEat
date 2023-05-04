@@ -1,7 +1,11 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import jwt_decode from 'jwt-decode';
 
+interface DecodedToken {
+  exp: number;
+}
 @Injectable({
   providedIn: 'root'
 })
@@ -23,8 +27,22 @@ export class AuthService {
     return localStorage.getItem('token');
   }
 
+  isTokenExpired(token: string): boolean {
+    try {
+      const decoded = jwt_decode(token) as DecodedToken;
+      const currentTime = Date.now() / 1000;
+      return decoded.exp < currentTime;
+    } catch (err) {
+      return false;
+    }
+  }
+
   isLoggedIn(): boolean {
-    const token = localStorage.getItem('token');
-    return !!token;
+    const token = this.getToken();
+    if (token && !this.isTokenExpired(token)) {
+      return true;
+    } else {
+      return false;
+    }
   }
 }

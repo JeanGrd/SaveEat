@@ -21,6 +21,8 @@ import { NotreMissionComponent } from './notre-mission/notre-mission.component';
 import { EventsComponent } from './events/events.component';
 import { EventListOpenComponent } from './event-list-open/event-list-open.component';
 import { EventCardComponent } from './event-card/event-card.component';
+import { EventDetailsFrontComponent } from './event-details-front/event-details-front.component';
+import { FormulaireInscriptionComponent } from './formulaire-inscription/formulaire-inscription.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +43,8 @@ import { EventCardComponent } from './event-card/event-card.component';
     EventsComponent,
     EventListOpenComponent,
     EventCardComponent,
+    EventDetailsFrontComponent,
+    FormulaireInscriptionComponent,
   ],
   imports: [
     BrowserModule,

@@ -2,7 +2,6 @@
 import { Component, OnInit } from '@angular/core';
 import { EventService } from '../event.service';
 import { Router } from '@angular/router';
-import { MessageService } from '../message.service';
 
 @Component({
   selector: 'app-event-list-open',
@@ -15,21 +14,20 @@ export class EventListOpenComponent implements OnInit {
   constructor(
     private eventService: EventService,
     private router: Router,
-    private messageService: MessageService
   ) { }
 
   ngOnInit(): void {
-    this.eventService.getEvents().subscribe(data => {
+    this.eventService.getEventsOpen().subscribe(data => {
       this.events = data;
     });
   }
 
   register(eventId: number): void {
-    this.router.navigate(['/dashboard/event-details', eventId]);
+    this.router.navigate(['events', eventId, 'inscription']);
   }
 
   showDetails(eventId: number): void {
-    this.router.navigate(['/dashboard/event-details', eventId]);
+    this.router.navigate(['events/', eventId]);
   }
 
 }

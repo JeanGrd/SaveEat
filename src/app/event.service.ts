@@ -15,6 +15,10 @@ export class EventService {
     return this.http.get(this.apiUrl);
   }
 
+  getEventsOpen(): Observable<any> {
+    return this.http.get(this.apiUrl + '/open');
+  }
+
   getEvent(eventId: number): Observable<Event> {
     const url = `${this.apiUrl}/${eventId}`;
     return this.http.get<Event>(url);

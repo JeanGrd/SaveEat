@@ -1,0 +1,16 @@
+<body>
+<div class="container">
+  <h1 class="title">Inscription participant</h1>
+  <form #participantForm="ngForm" (ngSubmit)="onSubmit(participantForm)">
+    <input type="text" name="first_name" id="first_name" placeholder="Nom" ngModel required />
+    <input type="text" name="last_name" id="last_name" placeholder="Prénom" ngModel required />
+    <input type="email" name="email" id="email" placeholder="@mail" ngModel required />
+    <input type="tel" name="phone_number" id="phone_number" placeholder="Numéro de téléphone" ngModel required />
+    <button type="submit" id="inscription" [disabled]="!participantForm.valid">Inscription</button>
+  </form>
+</div>
+</body>
+<style>
+  @import url('./formulaire-inscription.component.css');
+
+</style>

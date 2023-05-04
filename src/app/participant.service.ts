@@ -29,5 +29,10 @@ export class ParticipantService {
     const url = `${this.apiUrl}/${eventId}/participants/${participantId}/`;
     return this.http.put(url, eventData);
   }
+
+  createParticipant(eventId: number, eventData: any): Observable<any> {
+    const url = `${this.apiUrl}/${eventId}/participants`;
+    return this.http.post(url, eventData);
+  }
 }
 

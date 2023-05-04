@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-event-details',
@@ -6,4 +6,5 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./event-details.component.css']
 })
 export class EventDetailsComponent {
+
 }

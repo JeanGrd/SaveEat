@@ -12,11 +12,16 @@ import {DashboardComponent} from "./dashboard/dashboard.component";
 import {HomeComponent} from "./home/home.component";
 import {NotreMissionComponent} from "./notre-mission/notre-mission.component";
 import {EventListOpenComponent} from "./event-list-open/event-list-open.component";
+import {EventsComponent} from "./events/events.component";
+import {EventDetailsFrontComponent} from "./event-details-front/event-details-front.component";
+import {FormulaireInscriptionComponent} from "./formulaire-inscription/formulaire-inscription.component";
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'notre-mission', component: NotreMissionComponent },
-  { path: 'events', component: EventListOpenComponent },
+  { path: 'events', component: EventsComponent },
+  { path: 'events/:id', component: EventDetailsFrontComponent },
+  { path: 'events/:id/inscription', component: FormulaireInscriptionComponent },
   { path: 'login', component: AuthAdminComponent, canActivate: [LoginGuard] },
   { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
   { path: 'dashboard/create', component: EventCreateComponent, canActivate: [AuthGuard] },

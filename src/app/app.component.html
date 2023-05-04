@@ -1,6 +1,7 @@
-<router-outlet></router-outlet>
 <div class="message-container" *ngIf="messageData">
   <div class="message" [ngClass]="messageData.messageType">
     {{ messageData.message }}
   </div>
 </div>
+<router-outlet></router-outlet>
+
