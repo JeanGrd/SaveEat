@@ -1,0 +1,14 @@
+<!-- header-admin/header-admin.component.html -->
+<header id="header">
+  <div class="header-container">
+    <h1 id="logo"><a href="">MIAGE <span>Events</span></a></h1>
+    <nav id="nav">
+      <ul>
+        <li><a href="/events">Trouver un évènement</a></li>
+        <li><a routerLink="/notre-mission">Notre mission</a></li>
+        <li><a routerLink="/dashboard">Dashboard</a></li>
+        <li><a (click)="onLogout()" class="button primary">DECONNEXION</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>

@@ -1,0 +1,109 @@
+#nav > ul > li > .button:hover {
+  background-color: #fa0202;
+  transform: scale(1.1);
+  cursor: pointer;
+}
+#header {
+  background-color: white;
+  box-shadow: 0 1px 0 rgba(144, 144, 144, 0.25);
+  left: 0;
+  padding: 1em 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 90px;
+  z-index: 10001;
+}
+
+.header-container {
+  display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  align-items: center;
+}
+
+.button.primary:hover {
+  background-color: #ff5a5a;
+  border-color: #ff4444;
+  color: #ffffff;
+}
+
+.button.primary:active {
+  text-decoration: underline;
+}
+
+#nav > ul > li:hover > a {
+  color: #33d9a8;
+  text-shadow: 0 0 2px #20deab;
+}
+
+#logo {
+  flex: 1;
+}
+
+#logo {
+  font-family: 'Cinzel', serif;
+  color: #757575;
+  display: inline-block;
+  font-size: 1.35em;
+  letter-spacing: 0.20em;
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+#logo a {
+  color: inherit;
+  text-decoration: none;
+}
+
+#logo span {
+  font-size: 0.75em;
+  font-weight: 400;
+  letter-spacing: inherit;
+}
+
+#nav > ul {
+  width: auto;
+  max-width: 600px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+#nav > ul > li:first-child > a {
+  font-weight: bold;
+}
+
+#nav > ul > li:last-child > a.button.primary {
+  margin-right: 0;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+#nav > ul > li {
+  display: inline-block;
+  margin-left: 0.9em;
+  padding-left: 0;
+}
+
+#nav > ul > li > a {
+  color: #757575;
+  display: inline-block;
+  text-decoration: none;
+}
+
+#nav > ul > li > .button {
+  height: 3em;
+  line-height: 2.75em;
+  padding: 0 1.5em;
+}
+
+.button.primary {
+  background-color: #f67171;
+  border-color: #ff3333;
+  color: #ffffff;
+}
+
