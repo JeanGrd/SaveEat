@@ -20,6 +20,7 @@ body {
 input[type="date"] {
   height: 3.5rem;
   width: 100%;
+  color: black;
 }
 
 .title {

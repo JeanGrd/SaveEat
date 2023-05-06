@@ -1,7 +1,6 @@
 <body class="index is-preload">
-<div id="page-wrapper">
+<div id="page-wrapper" style="padding-top: 3cm;">
   <article id="main">
-
     <header class="special container">
       <span class="icon solid fa-chart-bar"></span>
       <h2>Bienvenue sur <strong>EVENT MIAGE</strong>, votre plateforme ultime pour découvrir et vivre des moments inoubliables grâce à une myriade d'événements et d'expériences enrichissantes
@@ -11,7 +10,7 @@
         Laissez-nous vous guider à travers les différentes facettes de notre plateforme et découvrez un monde d'événements captivants, adaptés à tous les goûts et intérêts.
         <br /></p>
     </header>
-
+    <!-- One -->
     <section class="wrapper style2 container special-alt">
       <div class="row gtr-50">
         <div class="col-8 col-12-narrower">
@@ -22,7 +21,7 @@
           <p>Notre sélection d'événements est riche et constamment mise à jour. Que vous soyez passionné de concerts, de festivals, d'expositions d'art, d'ateliers, de conférences, de compétitions sportives, de soirées à thème ou autres, nous avons tout pour satisfaire votre curiosité. Utilisez nos filtres de recherche avancés pour trouver les événements qui correspondent à vos préférences, votre localisation et votre budget.</p>
           <footer>
             <ul class="buttons">
-              <li><a routerLink='liste-evenements' class="button">Découvrir les événements</a></li>
+              <li><a routerLink='/events' class="button">Découvrir les événements</a></li>
             </ul>
           </footer>
 
@@ -33,14 +32,12 @@
       </div>
     </section>
 
-
     <!-- Two -->
     <section class="wrapper style1 container special">
       <div class="row">
-        <div class="col-4 col-12-narrower">
+        <div class="col-4 col-12-narrower section-highlight">
 
           <section>
-            <span class="icon solid featured fa-check"></span>
             <header>
               <h3>Rencontrez de nouvelles personnes</h3>
             </header>
@@ -48,21 +45,18 @@
           </section>
 
         </div>
-        <div class="col-4 col-12-narrower">
+        <div class="col-4 col-12-narrower section-highlight2">
 
           <section>
-            <span class="icon solid featured fa-check"></span>
             <header>
               <h3>Découvrez des événements liés à vos passions</h3>
             </header>
-            <p>Qu'il s'agisse de musique, d'art, de sport, de gastronomie, de technologie ou de tout autre domaine, nous avons l'événement qu'il vous faut pour nourrir votre passion. Inscrivez-vous et personnalisez votre expérience pour recevoir des recommandations spécialement adaptées à vos goûts.</p>
+            <p>Qu'il s'agisse de musique, d'art, de sport, de gastronomie, de technologie ou de tout autre domaine, nous avons
+              l'événement qu'il vous faut pour nourrir votre passion. Inscrivez-vous et personnalisez votre expérience pour recevoir des recommandations spécialement adaptées à vos goûts.</p>
           </section>
-
         </div>
-        <div class="col-4 col-12-narrower">
-
+        <div class="col-4 col-12-narrower section-highlight3">
           <section>
-            <span class="icon solid featured fa-check"></span>
             <header>
               <h3>Enrichissez vos connaissances dans un domaine </h3>
             </header>
@@ -72,16 +66,10 @@
         </div>
       </div>
     </section>
-
-
-
   </article>
-
   <!-- CTA -->
   <section id="cta">
-
-    <section class="container">
-
+    <section class="container cta-container">
       <div class="text-section">
         <header>
           <h2>T'es partant pour <strong>participer </strong>?</h2>
@@ -89,18 +77,13 @@
         </header>
         <footer>
           <ul class="buttons">
-            <li><a routerLink='/inscription-participant' class="button primary">S'inscrire</a></li>
-            <li><a href='/notre-mission' class="button">LOL What</a></li>
+            <li><a routerLink='/events' class="button primary">S'inscrire</a></li>
+            <li><a href='/notre-mission' class="button">EN SAVOIR PLUS</a></li>
           </ul>
         </footer>
       </div>
     </section>
-
   </section>
-
 </div>
 </body>
 
-<style>
-  @import url('./home.component.css');
-</style>

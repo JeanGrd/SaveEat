@@ -22,7 +22,10 @@ body {
   justify-content: center;
 }
 
-
+.btn-create:hover {
+  transform: scale(1.1);
+  background-color: #5af197;
+}
 
 .event-card {
   background-color: #f0f0f0;

@@ -1,11 +1,14 @@
-<!-- event-list-open.component.html -->
 <div class="container">
   <div style="height: 30px;"></div>
+  <div class="title-container">
+    <h1>Liste d'événements</h1>
+  </div>
   <div class="event-list">
-    <div class="event-card" *ngFor="let event of events">
+    <div class="event-card" [ngClass]="{'dark': index % 2 === 1}" *ngFor="let event of events; let index = index">
       <h3>{{ event.event_name }}</h3>
       <p>{{ event.description }}</p>
       <button class="btn-edit" (click)="showDetails(event.id)">Détails</button>
+      <span style="width: 10px; display: inline-block;"></span>
       <button *ngIf="!event.isLoading" class="btn-register" [disabled]="event.isFull" (click)="register(event.id)">
         {{ event.isFull ? 'Complet' : "S'inscrire" }}
       </button>
@@ -17,4 +20,5 @@
     <button class="btn-next" (click)="nextPage()" [disabled]="!hasMorePages">Suivant</button>
   </div>
 </div>
+
 

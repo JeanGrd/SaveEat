@@ -1,4 +1,7 @@
 <app-event-card></app-event-card>
-<button *ngIf="!isLoading" class="btn-register" (click)="register()" [disabled]="eventFull">
-  {{ eventFull ? 'Complet' : "S'inscrire" }}
-</button>
+<div class="center-horizontal">
+  <button *ngIf="!isLoading" class="btn-register" (click)="register()" [disabled]="eventFull">
+    {{ eventFull ? 'Complet' : "S'inscrire" }}
+  </button>
+</div>
+

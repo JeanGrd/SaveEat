@@ -18,8 +18,6 @@
   padding: 4rem;
 }
 
-
-
 .success {
   background-color: #4caf50;
   color: white;
@@ -40,7 +38,7 @@ body {
   background-color: #1acead;
   padding: 2rem 0;
   position: relative;
-  margin-top: 5rem; /* Adăugați această linie pentru a adăuga un spațiu liber între banda turcoaz și începutul paginii */
+  margin-top: 7rem;
 }
 
 
