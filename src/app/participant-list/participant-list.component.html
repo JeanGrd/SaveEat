@@ -14,4 +14,9 @@
       <button class="btn-delete" (click)="deleteParticipant(participant.id)">Supprimer</button>
     </div>
   </div>
+  <div class="center-horizontal">
+    <button (click)="prevPage()" [disabled]="!hasPrevPage" class="btn-pagination">Précédent</button>
+    <span>Page {{ currentPage }}</span>
+    <button (click)="nextPage()" [disabled]="!hasNextPage" class="btn-pagination">Suivant</button>
+  </div>
 </div>

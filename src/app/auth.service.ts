@@ -37,6 +37,10 @@ export class AuthService {
     }
   }
 
+  logout(): void {
+    localStorage.removeItem('token');
+  }
+
   isLoggedIn(): boolean {
     const token = this.getToken();
     if (token && !this.isTokenExpired(token)) {

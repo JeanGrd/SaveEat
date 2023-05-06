@@ -1,7 +1,8 @@
-// event-list.component.ts
+// event-list-open.component.ts
 import { Component, OnInit } from '@angular/core';
 import { EventService } from '../event.service';
 import { Router } from '@angular/router';
+import { ChangeDetectorRef } from '@angular/core';
 
 @Component({
   selector: 'app-event-list-open',
@@ -10,25 +11,36 @@ import { Router } from '@angular/router';
 })
 export class EventListOpenComponent implements OnInit {
   events: any[] = [];
+  currentPage: number = 1;
+  hasMorePages: boolean = false;
 
   constructor(
     private eventService: EventService,
     private router: Router,
+    private changeDetector: ChangeDetectorRef,
+
   ) { }
 
   ngOnInit(): void {
-    this.eventService.getEventsOpen().subscribe(data => {
-      this.events = data;
+    this.fetchEvents();
+
+  }
+
+  fetchEvents(): void {
+    this.eventService.getEventsOpen(this.currentPage).subscribe(data => {
+      this.events = data.events;
+      this.hasMorePages = (data.total > this.currentPage * 10);
       this.addIsFullPropertyToEvents();
+      this.changeDetector.detectChanges();
     });
   }
 
   addIsFullPropertyToEvents(): void {
     this.events.forEach(event => {
-      event.isLoading = true; // Ajoutez cette ligne
+      event.isLoading = true;
       this.eventService.isFull(event.id).subscribe(isFull => {
         event.isFull = isFull;
-        event.isLoading = false; // Ajoutez cette ligne
+        event.isLoading = false;
       });
     });
   }
@@ -39,5 +51,15 @@ export class EventListOpenComponent implements OnInit {
 
   showDetails(eventId: number): void {
     this.router.navigate(['events/', eventId]);
+  }
+
+  nextPage(): void {
+    this.currentPage += 1;
+    this.fetchEvents();
+  }
+
+  previousPage(): void {
+    this.currentPage -= 1;
+    this.fetchEvents();
   }
 }

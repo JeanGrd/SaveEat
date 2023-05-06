@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { EventService } from '../event.service';
 import { Router } from '@angular/router';
 import { MessageService } from '../message.service';
+import { ChangeDetectorRef } from '@angular/core';
 
 @Component({
   selector: 'app-event-list',
@@ -11,16 +12,26 @@ import { MessageService } from '../message.service';
 })
 export class EventListComponent implements OnInit {
   events: any[] = [];
+  currentPage: number = 1;
+  hasMoreEvents: boolean = true;
+
 
   constructor(
     private eventService: EventService,
     private router: Router,
-    private messageService: MessageService
+    private messageService: MessageService,
+    private changeDetector: ChangeDetectorRef,
   ) { }
 
   ngOnInit(): void {
-    this.eventService.getEvents().subscribe(data => {
-      this.events = data;
+    this.loadEvents();
+  }
+
+  loadEvents(): void {
+    this.eventService.getEvents(this.currentPage).subscribe(data => {
+      this.events = data.events;
+      this.hasMoreEvents = data.total > this.currentPage * 10;
+      this.changeDetector.detectChanges();
     });
   }
 
@@ -49,5 +60,17 @@ export class EventListComponent implements OnInit {
         this.messageService.showMessage('Erreur lors de la suppression de l\'événement.', 'error');
       }
     );
+  }
+
+  nextPage(): void {
+    this.currentPage += 1;
+    this.loadEvents();
+  }
+
+  previousPage(): void {
+    if (this.currentPage > 1) {
+      this.currentPage -= 1;
+      this.loadEvents();
+    }
   }
 }

@@ -10,6 +10,10 @@ export class ParticipantService {
 
   constructor(private http: HttpClient) {}
 
+  getAll(eventId: number, page: number): Observable<{ participants: any[], total: number }> {
+    return this.http.get<{ participants: any[], total: number }>(`${this.apiUrl}/${eventId}/participants?page=${page}`);
+  }
+
   getParticipants(eventId: number): Observable<any> {
     const url = `${this.apiUrl}/${eventId}/participants`;
     return this.http.get(url);

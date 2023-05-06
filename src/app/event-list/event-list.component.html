@@ -14,4 +14,9 @@
       <button class="btn-delete" (click)="deleteEvent(event.id)">Supprimer</button>
     </div>
   </div>
+  <div class="pagination-buttons">
+    <button [disabled]="currentPage === 1" (click)="previousPage()">Précédent</button>
+    <span>Page {{ currentPage }}</span>
+    <button [disabled]="!hasMoreEvents" (click)="nextPage()">Suivant</button>
+  </div>
 </div>

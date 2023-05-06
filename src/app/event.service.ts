@@ -11,12 +11,12 @@ export class EventService {
 
   constructor(private http: HttpClient) { }
 
-  getEvents(): Observable<any> {
-    return this.http.get(this.apiUrl);
+  getEvents(page: number): Observable<{ events: any[], total: number }> {
+    return this.http.get<{ events: any[], total: number }>(`${this.apiUrl}?page=${page}`);
   }
 
-  getEventsOpen(): Observable<any> {
-    return this.http.get(this.apiUrl + '/open');
+  getEventsOpen(page: number): Observable<{ events: any[], total: number }> {
+    return this.http.get<{ events: any[], total: number }>(`${this.apiUrl}/open?page=${page}`);
   }
 
   getEvent(eventId: number): Observable<Event> {

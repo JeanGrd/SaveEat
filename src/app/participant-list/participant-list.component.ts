@@ -1,34 +1,54 @@
-import {Component, OnInit} from '@angular/core';
-import {ParticipantService} from "../participant.service";
-import {MessageService} from "../message.service";
-import {ActivatedRoute, Router} from "@angular/router";
+import {ChangeDetectorRef, Component, OnInit} from '@angular/core';
+import { ParticipantService } from '../participant.service';
+import { MessageService } from '../message.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-participant-list',
   templateUrl: './participant-list.component.html',
   styleUrls: ['./participant-list.component.css']
 })
-export class ParticipantListComponent implements OnInit{
+export class ParticipantListComponent implements OnInit {
   eventId?: number;
   participants: any[] = [];
+  currentPage = 1;
+  hasNextPage = false;
+  hasPrevPage = false;
 
   constructor(
     private participantService: ParticipantService,
     private messageService: MessageService,
     private router: Router,
     private route: ActivatedRoute,
-
+    private changeDetector: ChangeDetectorRef,
   ) { }
 
   ngOnInit(): void {
     this.route.params.subscribe((params) => {
       this.eventId = +params['id'];
       if (this.eventId !== undefined) {
-        this.participantService.getParticipants(this.eventId).subscribe((participants: any[]) => {
-          this.participants = participants;
-        });
+        this.loadParticipants(this.currentPage);
       }
     });
+  }
+
+  loadParticipants(page: number): void {
+    this.participantService.getAll(this.eventId!, page).subscribe(({ participants, total }) => {
+      this.participants = participants;
+      this.hasPrevPage = page > 1;
+      this.hasNextPage = page * 10 < total;
+      this.changeDetector.detectChanges();
+    });
+  }
+
+  nextPage(): void {
+    this.currentPage++;
+    this.loadParticipants(this.currentPage);
+  }
+
+  prevPage(): void {
+    this.currentPage--;
+    this.loadParticipants(this.currentPage);
   }
 
   updateParticipant(eventId: number, participantId: number): void {

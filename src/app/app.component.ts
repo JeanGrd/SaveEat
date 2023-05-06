@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { MessageService, MessageData } from './message.service';
+import { AuthService } from './auth.service';
 
 @Component({
   selector: 'app-root',
@@ -9,9 +10,13 @@ import { MessageService, MessageData } from './message.service';
 export class AppComponent {
   messageData: MessageData | null = null;
 
-  constructor(public messageService: MessageService) {
+  constructor(public messageService: MessageService, private authService: AuthService) {
     this.messageService.message$.subscribe((messageData) => {
       this.messageData = messageData;
     });
+  }
+
+  isLoggedIn(): boolean {
+    return this.authService.isLoggedIn();
   }
 }

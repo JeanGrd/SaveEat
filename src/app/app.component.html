@@ -1,3 +1,6 @@
+<app-header *ngIf="!isLoggedIn()"></app-header>
+<app-header-admin *ngIf="isLoggedIn()"></app-header-admin>
+<router-outlet></router-outlet>
 <div class="message-container" *ngIf="messageData">
   <div class="message" [ngClass]="messageData.messageType">
     {{ messageData.message }}

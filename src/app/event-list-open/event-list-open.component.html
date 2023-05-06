@@ -1,3 +1,4 @@
+<!-- event-list-open.component.html -->
 <div class="container">
   <div style="height: 30px;"></div>
   <div class="event-list">
@@ -9,6 +10,11 @@
         {{ event.isFull ? 'Complet' : "S'inscrire" }}
       </button>
     </div>
+  </div>
+  <div class="pagination">
+    <button class="btn-previous" (click)="previousPage()" [disabled]="currentPage === 1">Précédent</button>
+    <span>Page {{ currentPage }}</span>
+    <button class="btn-next" (click)="nextPage()" [disabled]="!hasMorePages">Suivant</button>
   </div>
 </div>
 
