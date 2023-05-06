@@ -23,6 +23,7 @@ import { EventListOpenComponent } from './event-list-open/event-list-open.compon
 import { EventCardComponent } from './event-card/event-card.component';
 import { EventDetailsFrontComponent } from './event-details-front/event-details-front.component';
 import { FormulaireInscriptionComponent } from './formulaire-inscription/formulaire-inscription.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -52,6 +53,7 @@ import { FormulaireInscriptionComponent } from './formulaire-inscription/formula
     HttpClientModule,
     NgbModule,
     FormsModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

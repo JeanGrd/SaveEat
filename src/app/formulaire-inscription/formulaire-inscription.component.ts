@@ -3,6 +3,7 @@ import { NgForm } from '@angular/forms';
 import {ActivatedRoute, Router} from '@angular/router';
 import { MessageService } from '../message.service';
 import {ParticipantService} from "../participant.service";
+import {EventService} from "../event.service";
 // Ajoutez ici l'importation du service pour les inscriptions
 
 @Component({
@@ -15,8 +16,20 @@ export class FormulaireInscriptionComponent {
     private route: ActivatedRoute,
     private router: Router,
     private messageService: MessageService,
-    private participantService : ParticipantService
+    private participantService: ParticipantService,
+    private eventService : EventService
   ) {}
+
+  ngOnInit(): void {
+    this.route.params.subscribe((params) => {
+      const eventId = params['id'];
+      this.eventService.isFull(eventId).subscribe((isFull) => {
+        if (isFull) {
+          this.router.navigate(['/events', eventId]);
+        }
+      });
+    });
+  }
 
   onSubmit(form: NgForm) {
     if (form.valid) {

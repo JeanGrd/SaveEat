@@ -89,3 +89,15 @@ h1.text-center {
 .btn-create:hover {
   opacity: 0.8;
 }
+
+.btn-register:disabled {
+  background-color: #de2d2d;
+  opacity: 0.5; /* réduit l'opacité du bouton */
+  cursor: not-allowed; /* change le curseur */
+  pointer-events: none; /* désactive les événements de souris */
+}
+
+.btn-register:disabled:hover {
+  opacity: 0.5; /* garde l'opacité réduite lorsque le bouton est survolé */
+}
+

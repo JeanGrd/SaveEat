@@ -1,11 +1,14 @@
 <div class="container">
-  <div style="height: 30px;"></div> <!-- Ajoutez cette ligne pour ajouter de l'espace -->
+  <div style="height: 30px;"></div>
   <div class="event-list">
     <div class="event-card" *ngFor="let event of events">
       <h3>{{ event.event_name }}</h3>
       <p>{{ event.description }}</p>
       <button class="btn-edit" (click)="showDetails(event.id)">Détails</button>
-      <button class="btn-register" (click)="register(event.id)">S'inscrire</button>
+      <button *ngIf="!event.isLoading" class="btn-register" [disabled]="event.isFull" (click)="register(event.id)">
+        {{ event.isFull ? 'Complet' : "S'inscrire" }}
+      </button>
     </div>
   </div>
 </div>
+

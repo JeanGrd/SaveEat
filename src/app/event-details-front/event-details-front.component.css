@@ -1,0 +1,55 @@
+.btn-edit,
+.btn-register {
+  background-color: #2196F3;
+  color: #fff;
+  font-weight: 500;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1rem;
+  transition-duration: 0.4s;
+}
+
+.btn-register {
+  background-color: #008805;
+}
+
+.btn-edit:hover,
+.btn-register:hover {
+  opacity: 0.8;
+}
+
+.btn-create {
+  background-color: #4CAF50;
+  color: #fff;
+  font-weight: 500;
+  padding: 12px 24px;
+  margin-bottom: 30px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1rem;
+  transition-duration: 0.4s;
+}
+
+.btn-create:hover {
+  opacity: 0.8;
+}
+
+.btn-register:disabled {
+  background-color: #de2d2d;
+  opacity: 0.5; /* réduit l'opacité du bouton */
+  cursor: not-allowed; /* change le curseur */
+  pointer-events: none; /* désactive les événements de souris */
+}
+
+.btn-register:disabled:hover {
+  opacity: 0.5; /* garde l'opacité réduite lorsque le bouton est survolé */
+}

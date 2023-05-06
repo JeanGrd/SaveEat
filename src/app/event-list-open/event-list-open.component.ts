@@ -19,6 +19,17 @@ export class EventListOpenComponent implements OnInit {
   ngOnInit(): void {
     this.eventService.getEventsOpen().subscribe(data => {
       this.events = data;
+      this.addIsFullPropertyToEvents();
+    });
+  }
+
+  addIsFullPropertyToEvents(): void {
+    this.events.forEach(event => {
+      event.isLoading = true; // Ajoutez cette ligne
+      this.eventService.isFull(event.id).subscribe(isFull => {
+        event.isFull = isFull;
+        event.isLoading = false; // Ajoutez cette ligne
+      });
     });
   }
 
@@ -29,5 +40,4 @@ export class EventListOpenComponent implements OnInit {
   showDetails(eventId: number): void {
     this.router.navigate(['events/', eventId]);
   }
-
 }

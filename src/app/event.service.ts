@@ -1,7 +1,7 @@
 // event.service.ts
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import {map, Observable} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -32,6 +32,14 @@ export class EventService {
   createEvent(eventData: any): Observable<any> {
     const url = `${this.apiUrl}`;
     return this.http.post(url, eventData);
+  }
+
+  isFull(eventId: number): Observable<boolean> {
+    const eventIsFullUrl = `${this.apiUrl}/${eventId}/isfull`;
+
+    return this.http.get<{ is_full: number }[]>(eventIsFullUrl).pipe(
+      map(response => response[0].is_full === 1)
+    );
   }
 
 }
