@@ -9,7 +9,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 70vh; /* Updated from 100vh to 70vh */
+  min-height: 70vh;
   width: 100%;
   margin-top: 10vh;
   background-color: #f5f3f3;
@@ -20,6 +20,10 @@ body {
 input[type="date"] {
   height: 3.5rem;
   width: 100%;
+  color: black;
+}
+
+input[type="date"].date-filled {
   color: black;
 }
 
@@ -54,9 +58,8 @@ form {
   z-index: 1;
 }
 
-
 input, textarea, input[type="date"] {
-  border: 1px solid #e1e1e1;
+  border: 1px solid #e3e3e3;
   padding: 0.5rem;
   font-size: 1rem;
   width: 180%;
@@ -65,7 +68,7 @@ input, textarea, input[type="date"] {
   height: 3.5rem;
   border-radius: 0;
   color: #e0dede;
-  margin-left: -38%; /* Add this line to align the fields */
+  margin-left: -38%;
 }
 
 textarea {

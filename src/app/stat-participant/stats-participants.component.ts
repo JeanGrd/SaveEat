@@ -1,5 +1,5 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {StatistiqueService} from "../statistique.service";
+import {Component, OnInit} from '@angular/core';
+import {ParticipantService} from "../participant.service";
 import {ActivatedRoute} from "@angular/router";
 
 @Component({
@@ -10,7 +10,7 @@ import {ActivatedRoute} from "@angular/router";
 export class StatsParticipantsComponent implements OnInit {
   eventId?: number;
   total: any;
-  constructor(private route: ActivatedRoute, private Service: StatistiqueService) {}
+  constructor(private route: ActivatedRoute, private ParticipantService: ParticipantService) {}
 
   ngOnInit(): void {
     this.getTotalParticipants();
@@ -21,8 +21,8 @@ export class StatsParticipantsComponent implements OnInit {
 
   getTotalParticipants() {
     this.route.params.subscribe((params) => {
-      this.eventId = +params['id'];
-      this.Service.getTotalParticipants(this.eventId).subscribe((total) => {
+      this.eventId = +params['eventId'];
+      this.ParticipantService.getTotalParticipants(this.eventId).subscribe((total) => {
         this.total = total;
       });
     });

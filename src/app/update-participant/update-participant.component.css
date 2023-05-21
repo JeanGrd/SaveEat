@@ -4,6 +4,12 @@ body {
   margin: 0;
 }
 
+.error-message {
+  color: red;
+  font-size: 12px;
+  margin-top: 2px;
+}
+
 .container {
   display: flex;
   flex-direction: column;

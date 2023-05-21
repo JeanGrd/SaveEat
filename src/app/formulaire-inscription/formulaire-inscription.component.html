@@ -2,14 +2,24 @@
 <div class="container">
   <h1 class="title">Inscription participant</h1>
   <form #participantForm="ngForm" (ngSubmit)="onSubmit(participantForm)">
-    <input type="text" name="first_name" id="first_name" placeholder="Nom" ngModel required />
-    <input type="text" name="last_name" id="last_name" placeholder="Prénom" ngModel required />
-    <input type="email" name="email" id="email" placeholder="@mail" ngModel required />
-    <input type="tel" name="phone_number" id="phone_number" placeholder="Numéro de téléphone" ngModel required />
+    <input type="text" name="first_name" id="first_name" placeholder="Nom" ngModel required pattern="^[A-Za-zÀ-ÖØ-öø-ÿ]+(?:\s?[A-Za-zÀ-ÖØ-öø-ÿ]+)*$" #firstName="ngModel" />
+    <div *ngIf="firstName.invalid && firstName.touched" class="error-message">Nom invalide</div>
+    <input type="text" name="last_name" id="last_name" placeholder="Prénom" ngModel required pattern="^[A-Za-zÀ-ÖØ-öø-ÿ]+(?:\s?[A-Za-zÀ-ÖØ-öø-ÿ]+)*$" #lastName="ngModel" />
+    <div *ngIf="lastName.invalid && lastName.touched" class="error-message">Prénom invalide</div>
+
+    <input type="email" name="email" id="email" placeholder="E-mail" ngModel required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" #emailAddress="ngModel" />
+    <div *ngIf="emailAddress.invalid && emailAddress.touched" class="error-message">E-mail invalide</div>
+
+    <input type="tel" name="phone_number" id="phone_number" placeholder="Numéro de téléphone" ngModel required pattern="^\d{10}$" #phoneNumber="ngModel" />
+    <div *ngIf="phoneNumber.invalid && phoneNumber.touched" class="error-message">Numéro de téléphone invalide</div>
+
     <button type="submit" id="inscription" [disabled]="!participantForm.valid">Inscription</button>
   </form>
 </div>
 </body>
+<style>
+  @import url('./formulaire-inscription.component.css');
+</style>
 <style>
   @import url('./formulaire-inscription.component.css');
 

@@ -5,6 +5,9 @@
   <div class="center-horizontal">
     <button class="btn-create" (click)="create()">Création d'un évènement</button>
   </div>
+  <div class="center-horizontal">
+    <input type="text" [(ngModel)]="searchTerm" (ngModelChange)="onSearch()" placeholder="Rechercher par titre...">
+  </div>
   <div class="event-list">
     <div class="event-card" [ngClass]="{'dark': index % 2 === 1}" *ngFor="let event of events; let index = index">
       <h3>{{ event.event_name }}</h3>
@@ -16,7 +19,8 @@
   </div>
   <div class="pagination-buttons">
     <button [disabled]="currentPage === 1" (click)="previousPage()">Précédent</button>
-    <span>Page {{ currentPage }}</span>
+    <span class="page-indicator">Page {{ currentPage }}</span>
     <button [disabled]="!hasMoreEvents" (click)="nextPage()">Suivant</button>
   </div>
 </div>
+

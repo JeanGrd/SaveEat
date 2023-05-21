@@ -4,7 +4,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 import { MessageService } from '../message.service';
 import {ParticipantService} from "../participant.service";
 import {EventService} from "../event.service";
-// Ajoutez ici l'importation du service pour les inscriptions
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-formulaire-inscription',
@@ -17,12 +17,13 @@ export class FormulaireInscriptionComponent {
     private router: Router,
     private messageService: MessageService,
     private participantService: ParticipantService,
-    private eventService : EventService
+    private eventService : EventService,
+    private location: Location,
   ) {}
 
   ngOnInit(): void {
     this.route.params.subscribe((params) => {
-      const eventId = params['id'];
+      const eventId = params['eventId'];
       this.eventService.isFull(eventId).subscribe((isFull) => {
         if (isFull) {
           this.router.navigate(['/events', eventId]);
@@ -44,11 +45,12 @@ export class FormulaireInscriptionComponent {
       // Remplacez 'createParticipant()' par la méthode appropriée dans votre service
       this.route.params.subscribe((params) => {
 
-        this.participantService.createParticipant(params['id'], participantData).subscribe(
+        this.participantService.createParticipant(params['eventId'], participantData).subscribe(
           (response) => {
             console.log('Participant inscrit', response);
             this.messageService.showMessage("L'inscription du participant a réussi !");
-            this.router.navigate(['/events', params['id']]); // Ajoutez l'URL appropriée pour la page principale
+            this.router.navigate(['/events', params['eventId']]); // Ajoutez l'URL appropriée pour la page principale
+            this.location.replaceState('/events');
           },
           (error) => {
             if (error.error.error === "Event capacity reached") {

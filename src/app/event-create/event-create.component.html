@@ -15,13 +15,15 @@
       <textarea id="description" name="description" ngModel placeholder="Description"></textarea>
     </div>
     <div>
-      <input type="date" id="registrationStartDate" name="registrationStartDate" ngModel required placeholder="Date de début des inscriptions" />
+      <input type="date" id="registrationStartDate" name="registrationStartDate" ngModel [class.date-filled]="createForm.value.registrationStartDate" required placeholder="Date de début des inscriptions" />
     </div>
     <div>
-      <input type="date" id="registrationEndDate" name="registrationEndDate" ngModel required placeholder="Date de fin des inscriptions" />
+      <input type="date" id="registrationEndDate" name="registrationEndDate" ngModel [class.date-filled]="createForm.value.registrationEndDate" required placeholder="Date de fin des inscriptions" />
+      <div *ngIf="!validateDates(createForm.value.registrationStartDate,createForm.value.registrationEndDate)">
+      </div>
     </div>
     <div>
-      <input type="number" id="maxParticipants" name="maxParticipants" ngModel required placeholder="Nombre maximum de participants" />
+      <input type="number" id="maxParticipants" name="maxParticipants" ngModel required placeholder="Nombre maximum de participants" min="0" />
     </div>
     <button type="submit" [disabled]="!createForm.valid">Créer un événement</button>
   </form>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { StatistiqueService } from "../statistique.service";
+import {EventService} from "../event.service";
+import {ParticipantService} from "../participant.service";
 
 @Component({
   selector: 'app-generalstat',
@@ -10,20 +11,20 @@ export class GeneralstatComponent implements OnInit {
   total: any;
   average: any;
 
-  constructor(private Service: StatistiqueService) {}
+  constructor(private EventService: EventService, private ParticipantService: ParticipantService) {}
 
   ngOnInit(): void {
     this.getGeneralStats();
     setInterval(() => {
       this.getGeneralStats();
-    }, 500); // Mettez à jour toutes les 5 secondes
+    }, 500);
   }
 
   getGeneralStats(): void {
-    this.Service.getTotalEvent().subscribe((total) => {
-      this.total = total;
+    this.EventService.getTotalEvent().subscribe((event_count) => {
+      this.total = event_count;
     });
-    this.Service.getAverageParticipants().subscribe((average) => {
+    this.ParticipantService.getAverageParticipants().subscribe((average) => {
       this.average = average;
     });
   }

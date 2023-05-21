@@ -20,7 +20,42 @@ body {
 .center-horizontal {
   display: flex;
   justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+  flex-wrap: wrap;
 }
+
+.btn-pagination {
+  font-weight: 500;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 0.9rem;
+  transition-duration: 0.4s;
+  background-color: #30cfc0;
+  color: #fff;
+  margin: 5px;
+}
+
+.page-indicator {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.1rem;
+  color: white;
+  background-color: black;
+  padding: 5px 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  font-weight: bold;
+  margin-bottom: 5vh;
+  margin-top: 5vh;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
 
 .event-card {
   background-color: #f0f0f0;
@@ -74,4 +109,18 @@ body {
 .btn-edit:hover,
 .btn-delete:hover {
   opacity: 0.6;
+}
+
+
+
+.btn-pagination:hover {
+  opacity: 0.6;
+}
+
+.btn-pagination[disabled] {
+  background-color: #c5c5c5;
+  cursor: not-allowed;
+}
+.center-horizontal {
+  margin-top: 30px;
 }

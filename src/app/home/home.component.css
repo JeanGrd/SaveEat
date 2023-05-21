@@ -58,17 +58,7 @@ strong {
   margin-bottom: 3vh;
 }
 
-.button {
-  background-color: #30cfc0;
-  color: white;
-  text-decoration: none;
-}
 
-.button:hover {
-  background-color: white;
-  color: #1abc9c;
-  border: 2px solid #1abc9c;
-}
 
 
 .section-highlight {
@@ -79,24 +69,17 @@ strong {
   background-color: #086553;
 }
 
-.section-highlight2 {
-  background-color: #22bd9d;
-  transition: background-color 0.3s ease-in-out;
-
-}
 
 .section-highlight2:hover {
   background-color: #26de82;
 }
 
-.section-highlight3 {
-  transition: background-color 0.3s ease-in-out;
-
-}
-
 .section-highlight3:hover {
-  background-color: #02fce0;
+  background-color: #31b472;
 }
+
+
+
 
 .text-section {
   text-align: center;
@@ -145,6 +128,33 @@ ul {
   opacity: 0.8;
 }
 
+.button {
+  background-color: #30cfc0;
+  color: white;
+  text-decoration: none;
+  border: 2px solid #30cfc0;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+}
+
+.button:hover {
+  background-color: white;
+  color: #30cfc0;
+  border: 2px solid #30cfc0;
+}
+
+.custom-section {
+  background-color: transparent;
+  margin-bottom: 20px;
+}
+
+.section{
+  background-color: transparent;
+  transition: background-color 0.3s ease-in-out;
+}
+
+
+
+
 .image-right {
   max-width: 100%;
 }
@@ -162,12 +172,11 @@ ul {
 }
 
 @keyframes background-color-change {
-  0% { background-color: #57f3e4; }
-  25% { background-color: #39ada2; }
-  50% { background-color: #1bf1dc; } /* Turcoaz închis */
-  75% { background-color: #03ffc3; } /* Turcoaz deschis */
-  100% { background-color: #0bb076; }
-
+  0%   { background-color: #57f3e4; }
+  25%  { background-color: #4acec1; }
+  50%  { background-color: #41b7ac; }
+  75%  { background-color: #4acec1; }
+  100% { background-color: #57f3e4; }
 }
 
 @media (max-width: 767px) {
@@ -185,4 +194,8 @@ ul {
   .buttons li {
     margin: 0;
   }
+}
+
+.buttons a:active {
+  transform: none;
 }

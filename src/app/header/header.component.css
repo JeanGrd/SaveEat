@@ -88,7 +88,7 @@
 #logo span {
   font-size: 0.75em;
   font-weight: 400;
-  letter-spacing: 0.1;
+  letter-spacing: inherit;
 }
 
 #nav > ul > li {

@@ -14,7 +14,7 @@ export class EventListComponent implements OnInit {
   events: any[] = [];
   currentPage: number = 1;
   hasMoreEvents: boolean = true;
-
+  searchTerm: string = '';
 
   constructor(
     private eventService: EventService,
@@ -28,11 +28,17 @@ export class EventListComponent implements OnInit {
   }
 
   loadEvents(): void {
-    this.eventService.getEvents(this.currentPage).subscribe(data => {
+    this.eventService.getEvents(this.currentPage, this.searchTerm).subscribe(data => {
       this.events = data.events;
       this.hasMoreEvents = data.total > this.currentPage * 10;
       this.changeDetector.detectChanges();
     });
+  }
+
+  onSearch(): void {
+    // Reset the current page and reload events when a new search is performed
+    this.currentPage = 1;
+    this.loadEvents();
   }
 
   create(): void {
@@ -40,7 +46,7 @@ export class EventListComponent implements OnInit {
   }
 
   showDetails(eventId: number): void {
-    this.router.navigate(['/dashboard/event-details', eventId]);
+    this.router.navigate(['/dashboard/', eventId]);
   }
 
   deleteEvent(eventId: number): void {

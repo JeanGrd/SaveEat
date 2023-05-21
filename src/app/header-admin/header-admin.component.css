@@ -1,6 +1,5 @@
 #nav > ul > li > .button:hover {
   background-color: #fa0202;
-  transform: scale(1.1);
   cursor: pointer;
 }
 #header {
@@ -106,4 +105,3 @@
   border-color: #ff3333;
   color: #ffffff;
 }
-

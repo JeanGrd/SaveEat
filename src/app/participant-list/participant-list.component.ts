@@ -14,6 +14,7 @@ export class ParticipantListComponent implements OnInit {
   currentPage = 1;
   hasNextPage = false;
   hasPrevPage = false;
+  searchTerm: string = '';
 
   constructor(
     private participantService: ParticipantService,
@@ -25,7 +26,7 @@ export class ParticipantListComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.params.subscribe((params) => {
-      this.eventId = +params['id'];
+      this.eventId = +params['eventId'];
       if (this.eventId !== undefined) {
         this.loadParticipants(this.currentPage);
       }
@@ -33,7 +34,7 @@ export class ParticipantListComponent implements OnInit {
   }
 
   loadParticipants(page: number): void {
-    this.participantService.getAll(this.eventId!, page).subscribe(({ participants, total }) => {
+    this.participantService.getAllByPage(this.eventId!, page, this.searchTerm).subscribe(({ participants, total }) => {
       this.participants = participants;
       this.hasPrevPage = page > 1;
       this.hasNextPage = page * 10 < total;
@@ -52,7 +53,7 @@ export class ParticipantListComponent implements OnInit {
   }
 
   updateParticipant(eventId: number, participantId: number): void {
-    this.router.navigate(['dashboard/event-details', eventId, 'participants', participantId]);
+    this.router.navigate(['dashboard/', eventId, participantId]);
   }
 
 
@@ -75,5 +76,10 @@ export class ParticipantListComponent implements OnInit {
     );
   }
 
+  onSearch(): void {
+    // Reset the current page and reload events when a new search is performed
+    this.currentPage = 1;
+    this.loadParticipants(1);
+  }
 
 }

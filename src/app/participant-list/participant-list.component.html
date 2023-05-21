@@ -5,6 +5,9 @@
   <div class="center-horizontal">
     <app-export-csv-button [eventId]="eventId"></app-export-csv-button>
   </div>
+  <div class="center-horizontal">
+    <input type="text" [(ngModel)]="searchTerm" (ngModelChange)="onSearch()" placeholder="Rechercher par email..">
+  </div>
   <div class="event-list">
     <div class="event-card" [ngClass]="{'dark': index % 2 === 1}" *ngFor="let participant of participants; let index = index">
       <h3>{{ participant.first_name }} {{ participant.last_name }}</h3>
@@ -16,7 +19,8 @@
   </div>
   <div class="center-horizontal">
     <button (click)="prevPage()" [disabled]="!hasPrevPage" class="btn-pagination">Précédent</button>
-    <span>Page {{ currentPage }}</span>
+    <span class="page-indicator">Page {{ currentPage }}</span>
     <button (click)="nextPage()" [disabled]="!hasNextPage" class="btn-pagination">Suivant</button>
   </div>
 </div>
+

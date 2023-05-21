@@ -3,6 +3,7 @@ import { NgForm } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { MessageService } from '../message.service';
 import { ParticipantService } from '../participant.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-update-participant',
@@ -19,7 +20,8 @@ export class UpdateParticipantComponent implements OnInit {
     private participantService: ParticipantService,
     private messageService: MessageService,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private location : Location,
   ) {}
 
   ngOnInit(): void {
@@ -52,7 +54,9 @@ export class UpdateParticipantComponent implements OnInit {
           (response) => {
             console.log('Participant updated', response);
             this.messageService.showMessage('Participant mis à jour avec succès !');
-            this.router.navigate(['dashboard/event-details', this.eventId]);
+            this.router.navigate(['dashboard/', this.eventId]);
+            this.location.replaceState('dashboard/');
+
           },
           (error) => {
             console.error('Error updating participant', error);

@@ -19,7 +19,7 @@ export class EventDetailsFrontComponent {
 
   ngOnInit(): void {
     this.route.params.subscribe((params) => {
-      const eventId = params['id'];
+      const eventId = params['eventId'];
       this.eventService.getEvent(eventId).subscribe((event) => {
         this.eventService.isFull(eventId).subscribe((isFull) => {
           this.eventFull = isFull;
@@ -31,7 +31,7 @@ export class EventDetailsFrontComponent {
 
   register(): void {
     this.route.params.subscribe((params) => {
-      this.router.navigate(['events', params['id'], 'inscription']);
+      this.router.navigate(['events', params['eventId'], 'inscription']);
     });
   }
 }

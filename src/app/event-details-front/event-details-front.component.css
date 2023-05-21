@@ -1,6 +1,6 @@
 .btn-register {
   font-weight: 500;
-  padding: 15px 30px; /* Valori mai mari pentru a face butonul mai mare */
+  padding: 20px 35px; /* Valori mai mari pentru a face butonul mai mare */
   border: none;
   border-radius: 0; /* Fără margini rotunjite */
   cursor: pointer;
@@ -14,12 +14,17 @@
   color: #fff;
   margin-bottom:60px;
 }
-.btn-register:hover {
-  transform: scale(1.1);
-  background-color: #5af197;
-}
+
 
 .center-horizontal {
   display: flex;
   justify-content: center;
+}
+
+
+.btn-register.full {
+  background-color: #f88f8f;
+  box-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
+  color: #fff;
+  cursor: not-allowed;
 }

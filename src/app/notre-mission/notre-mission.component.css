@@ -26,7 +26,7 @@ body {
   font-size: 1.1rem;
   text-align: justify;
   transition: background-color 0.3s;
-  animation: background-color-change 5s infinite;
+  animation: background-color-change 3s infinite;
 }
 .mission-section:nth-child(2) {
   animation-delay: 2s;
@@ -42,7 +42,6 @@ body {
 .mission-section h2 {
   font-size: 1.5rem;
   font-weight: 500;
-  margin-bottom: 10px;
 }
 
 .mission-section:hover { /* Add this block */
@@ -65,7 +64,7 @@ body {
   font-size: 1.2rem;
   font-weight: bold;
   padding: 15px 30px;
-  margin-top: 55vh;
+  margin-top: 47vh;
   text-align: center;
   text-decoration: none;
   transition: background-color 0.3s;
@@ -165,14 +164,34 @@ body {
 
 .carousel-wrapper {
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   align-items: center;
 }
 
+
 @keyframes background-color-change {
-  0% { background-color: #57f3e4; } /* Turcoaz deschis */
-  25% { background-color: #09ceab; } /* Turcoaz */
-  50% { background-color: #2bd7a3; } /* Turcoaz închis */
-  75% { background-color: #8dcde5; } /* Turcoaz deschis */
-  100% { background-color: #30cfc0; } /* Turcoaz deschis */
+  0% { background-color: #fcfdfd; }
+  25% { background-color: #eaeaea; }
+  50% { background-color: #d5d5d5; }
+}
+
+.intro-container {
+  background-color: #7a7a7a;
+  padding: 30px 0;
+  margin-bottom: 30px;
+  box-sizing: border-box;
+  width: calc(100% - 4cm);
+  margin-left: 2cm;
+  margin-right: 2cm;
+  text-align: center;
+}
+
+.intro-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  color: #fff;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  padding: 0 20px;
+  box-sizing: border-box;
 }

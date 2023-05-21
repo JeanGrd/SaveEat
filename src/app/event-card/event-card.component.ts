@@ -15,7 +15,7 @@ export class EventCardComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.params.subscribe((params) => {
-      this.eventId = +params['id'];
+      this.eventId = +params['eventId'];
       this.eventService.getEvent(this.eventId).subscribe((event: Event) => {
         this.event = event;
       });

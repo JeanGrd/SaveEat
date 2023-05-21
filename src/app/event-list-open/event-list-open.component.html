@@ -3,20 +3,23 @@
   <div class="title-container">
     <h1>Liste d'événements</h1>
   </div>
+  <div>
+    <input type="text" [(ngModel)]="searchStr" (keyup)="searchEvents()" placeholder="Rechercher un évènement..."/>
+  </div>
   <div class="event-list">
     <div class="event-card" [ngClass]="{'dark': index % 2 === 1}" *ngFor="let event of events; let index = index">
       <h3>{{ event.event_name }}</h3>
       <p>{{ event.description }}</p>
       <button class="btn-edit" (click)="showDetails(event.id)">Détails</button>
       <span style="width: 10px; display: inline-block;"></span>
-      <button *ngIf="!event.isLoading" class="btn-register" [disabled]="event.isFull" (click)="register(event.id)">
+      <button *ngIf="!event.isLoading" class="btn-register" [disabled]="event.isFull" (click)="register(event.id)" [ngClass]="{'full': event.isFull}">
         {{ event.isFull ? 'Complet' : "S'inscrire" }}
       </button>
     </div>
   </div>
   <div class="pagination">
     <button class="btn-previous" (click)="previousPage()" [disabled]="currentPage === 1">Précédent</button>
-    <span>Page {{ currentPage }}</span>
+    <span class="page-indicator">Page {{ currentPage }}</span>
     <button class="btn-next" (click)="nextPage()" [disabled]="!hasMorePages">Suivant</button>
   </div>
 </div>

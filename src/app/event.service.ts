@@ -11,12 +11,12 @@ export class EventService {
 
   constructor(private http: HttpClient) { }
 
-  getEvents(page: number): Observable<{ events: any[], total: number }> {
-    return this.http.get<{ events: any[], total: number }>(`${this.apiUrl}?page=${page}`);
+  getEvents(page: number, searchTerm: string): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}?page=${page}&search=${searchTerm}`);
   }
 
-  getEventsOpen(page: number): Observable<{ events: any[], total: number }> {
-    return this.http.get<{ events: any[], total: number }>(`${this.apiUrl}/open?page=${page}`);
+  getEventsOpen(page: number, searchStr: string = '') {
+    return this.http.get<any>(`${this.apiUrl}/open?page=${page}&search=${searchStr}`);
   }
 
   getEvent(eventId: number): Observable<Event> {
@@ -40,6 +40,10 @@ export class EventService {
     return this.http.get<{ is_full: number }[]>(eventIsFullUrl).pipe(
       map(response => response[0].is_full === 1)
     );
+  }
+
+  getTotalEvent(): Observable<any> {
+    return this.http.get(this.apiUrl + "/total");
   }
 
 }
