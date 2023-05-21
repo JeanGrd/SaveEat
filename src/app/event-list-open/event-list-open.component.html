@@ -1,9 +1,18 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Liste d'événements</title>
+  <link rel="stylesheet" href="event-list-open.component.css">
+</head>
+<body>
 <div class="container">
   <div style="height: 30px;"></div>
   <div class="title-container">
     <h1>Liste d'événements</h1>
   </div>
-  <div>
+  <div class="search-container">
     <input type="text" [(ngModel)]="searchStr" (keyup)="searchEvents()" placeholder="Rechercher un évènement..."/>
   </div>
   <div class="event-list">
@@ -23,5 +32,5 @@
     <button class="btn-next" (click)="nextPage()" [disabled]="!hasMorePages">Suivant</button>
   </div>
 </div>
-
-
+</body>
+</html>

@@ -21,12 +21,11 @@ export class NotreMissionComponent implements OnInit {
     }, 0);
   }
 
-
   startCarousel() {
     setInterval(() => {
       this.carouselItems[this.currentItemIndex].classList.remove('active');
       this.currentItemIndex = (this.currentItemIndex + 1) % this.carouselItems.length;
       this.carouselItems[this.currentItemIndex].classList.add('active');
-    }, 3000); // Durata în milisecunde între schimbarea imaginilor
+    }, 3000);
   }
 }

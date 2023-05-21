@@ -47,7 +47,8 @@ h3 {
   color: #b0b0b0; }
 
 .btn, .form-control, .custom-select {
-  height: 50px; }
+  height: 50px;
+  }
 
 .custom-select:active, .custom-select:focus {
   outline: none;

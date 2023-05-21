@@ -29,8 +29,8 @@ export class EventListComponent implements OnInit {
 
   loadEvents(): void {
     this.eventService.getEvents(this.currentPage, this.searchTerm).subscribe(data => {
-      this.events = data.events;
       this.hasMoreEvents = data.total > this.currentPage * 10;
+      this.events = data.events;
       this.changeDetector.detectChanges();
     });
   }
