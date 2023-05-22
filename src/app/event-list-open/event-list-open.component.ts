@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { EventService } from '../event.service';
-import { Router } from '@angular/router';
-import { ChangeDetectorRef } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {EventService} from '../event.service';
+import {Router} from '@angular/router';
+import {ChangeDetectorRef} from '@angular/core';
 
 @Component({
   selector: 'app-event-list-open',
@@ -18,7 +18,8 @@ export class EventListOpenComponent implements OnInit {
     private eventService: EventService,
     private router: Router,
     private changeDetector: ChangeDetectorRef,
-  ) { }
+  ) {
+  }
 
   ngOnInit(): void {
     this.fetchEvents();

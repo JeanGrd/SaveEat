@@ -24,7 +24,7 @@ import { EventDetailsFrontComponent } from './event-details-front/event-details-
 import { FormulaireInscriptionComponent } from './formulaire-inscription/formulaire-inscription.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { HeaderAdminComponent } from './header-admin/header-admin.component';
-import { PageContactComponent } from './page-contact/page-contact.component';
+import { ContactComponent } from './contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +47,7 @@ import { PageContactComponent } from './page-contact/page-contact.component';
     EventDetailsFrontComponent,
     FormulaireInscriptionComponent,
     HeaderAdminComponent,
-    PageContactComponent,
+    ContactComponent,
   ],
   imports: [
     BrowserModule,

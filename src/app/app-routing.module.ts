@@ -12,12 +12,12 @@ import {NotreMissionComponent} from "./notre-mission/notre-mission.component";
 import {EventDetailsFrontComponent} from "./event-details-front/event-details-front.component";
 import {FormulaireInscriptionComponent} from "./formulaire-inscription/formulaire-inscription.component";
 import {EventListOpenComponent} from "./event-list-open/event-list-open.component";
-import {PageContactComponent} from "./page-contact/page-contact.component";
+import {ContactComponent} from "./contact/contact.component";
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'notre-mission', component: NotreMissionComponent },
-  { path: 'contact', component: PageContactComponent },
+  { path: 'contact', component: ContactComponent },
   { path: 'events', component: EventListOpenComponent },
   { path: 'events/:eventId', component: EventDetailsFrontComponent },
   { path: 'events/:eventId/inscription', component: FormulaireInscriptionComponent },
