@@ -1,9 +1,12 @@
+<!-- Section du conteneur du titre -->
 <div class="title-container">
   <h1>Détails de l'événement</h1>
 </div>
 
+<!-- Section du conteneur principal -->
 <div class="container">
   <div class="event-details">
+    <!-- Boucle pour chaque événement dans la liste des événements -->
     <div class="event-card" *ngFor="let event of event">
       <h2>{{ event.event_name }}</h2>
       <p class="event-acronym">Acronyme : {{ event.acronym }}</p>

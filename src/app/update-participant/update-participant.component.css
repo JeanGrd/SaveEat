@@ -1,15 +1,18 @@
+/* Styles globaux pour le corps de la page */
 body {
   background-color: #f5f3f3;
   font-family: Arial, sans-serif;
   margin: 0;
 }
 
+/* Styles pour les messages d'erreur */
 .error-message {
   color: red;
   font-size: 12px;
   margin-top: 2px;
 }
 
+/* Styles pour le conteneur principal */
 .container {
   display: flex;
   flex-direction: column;
@@ -22,6 +25,7 @@ body {
   position: relative;
 }
 
+/* Styles pour le titre */
 .title {
   color: gray;
   font-weight: bold;
@@ -30,6 +34,7 @@ body {
   padding: 2rem;
 }
 
+/* Styles pour le formulaire */
 form {
   display: flex;
   flex-direction: column;
@@ -43,7 +48,10 @@ form {
   z-index: 1;
 }
 
-input, input[type="tel"], input[type="email"] {
+/* Styles pour les champs de saisie */
+input,
+input[type="tel"],
+input[type="email"] {
   border: 1px solid #e1e1e1;
   padding: 0.5rem;
   font-size: 1rem;
@@ -56,11 +64,13 @@ input, input[type="tel"], input[type="email"] {
   margin-left: -38%;
 }
 
+/* Styles pour le texte de l'attribut placeholder */
 input::placeholder {
   color: #b9b7b7;
   opacity: 1;
 }
 
+/* Styles pour le bouton de soumission */
 button[type="submit"] {
   background-color: #1acead;
   border: 1px solid lightgray;
@@ -76,11 +86,13 @@ button[type="submit"] {
   border-radius: 4px;
 }
 
+/* Styles au survol du bouton de soumission */
 button[type="submit"]:hover {
   transform: scale(1.1);
   background-color: #2fee81;
 }
 
+/* Styles pour l'arrière-plan du conteneur principal */
 .container::before {
   content: "";
   position: fixed;
@@ -92,6 +104,7 @@ button[type="submit"]:hover {
   z-index: -1;
 }
 
+/* Styles pour l'arrière-plan du formulaire */
 .form-background {
   position: absolute;
   top: -1rem;
@@ -102,10 +115,12 @@ button[type="submit"]:hover {
   z-index: -1;
 }
 
+/* Styles pour le bouton de soumission désactivé */
 button[type="submit"][disabled] {
   opacity: 0.5;
 }
 
+/* Styles au survol du bouton de soumission désactivé */
 button[type="submit"][disabled]:hover {
   transform: none;
   background-color: #1acead;

@@ -1,31 +1,34 @@
+/* Styles du bouton d'inscription */
 .btn-register {
   font-weight: 500;
-  padding: 20px 35px; /* Valori mai mari pentru a face butonul mai mare */
+  padding: 20px 35px; /* Valeurs plus grandes pour agrandir le bouton */
   border: none;
-  border-radius: 0; /* Fără margini rotunjite */
+  border-radius: 0; /* Pas de bordures arrondies */
   cursor: pointer;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 1.2rem; /* Font-size mai mare */
+  font-size: 1.2rem; /* Taille de police plus grande */
   transition-duration: 0.4s;
   margin-top: 10px;
   background-color: #1acead;
   color: #fff;
-  margin-bottom:60px;
+  margin-bottom: 60px;
 }
 
+/* Styles du survol du bouton */
 button:hover {
   transform: scale(1.1);
   background-color: #2fee81;
 }
 
+/* Styles du conteneur horizontal */
 .center-horizontal {
   display: flex;
   justify-content: center;
 }
 
-
+/* Styles du bouton d'inscription lorsqu'il est plein */
 .btn-register.full {
   background-color: #f88f8f;
   box-shadow: 0 0 5px rgba(255, 0, 0, 0.5);

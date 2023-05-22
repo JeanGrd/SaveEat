@@ -1,5 +1,9 @@
+<!-- Conteneur des statistiques -->
 <div class="stats-container">
+  <!-- Titre des statistiques événement -->
   <h4>Statistiques événement</h4>
+
+  <!-- Carte de statistiques pour le nombre de participants -->
   <div class="stat-card" *ngFor="let stats of total">
     <p>Nombre de participants : {{ stats.total }}</p>
   </div>

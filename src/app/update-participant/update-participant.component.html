@@ -1,23 +1,33 @@
+<!-- Conteneur principal -->
 <div class="container">
+  <!-- Arrière-plan du formulaire -->
   <div class="form-background"></div>
+
+  <!-- Titre -->
   <h1 class="title">Mettre à jour les informations</h1>
+
+  <!-- Formulaire -->
   <form *ngIf="isDataLoaded" #form="ngForm" (ngSubmit)="onSubmit(form)">
     <div>
       <input type="text" id="firstName" name="firstName" class="form-control" [(ngModel)]="participant.first_name" required placeholder="Prénom" pattern="^[A-Za-zÀ-ÖØ-öø-ÿ]+(?:\s?[A-Za-zÀ-ÖØ-öø-ÿ]+)*$" #firstNameModel="ngModel" />
       <div *ngIf="firstNameModel.invalid && firstNameModel.touched" class="error-message">Prénom invalide</div>
     </div>
+
     <div>
       <input type="text" id="lastName" name="lastName" class="form-control" [(ngModel)]="participant.last_name" required placeholder="Nom" pattern="^[A-Za-zÀ-ÖØ-öø-ÿ]+(?:\s?[A-Za-zÀ-ÖØ-öø-ÿ]+)*$" #lastNameModel="ngModel" />
       <div *ngIf="lastNameModel.invalid && lastNameModel.touched" class="error-message">Nom invalide</div>
     </div>
+
     <div>
       <input type="email" id="email" name="email" class="form-control" [(ngModel)]="participant.email" required placeholder="E-mail" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" #emailModel="ngModel" />
       <div *ngIf="emailModel.invalid && emailModel.touched" class="error-message">E-mail invalide</div>
     </div>
+
     <div>
       <input type="tel" id="phoneNumber" name="phoneNumber" class="form-control" [(ngModel)]="participant.phone_number" required placeholder="Numéro de téléphone" pattern="^\d{10}$" #phoneNumberModel="ngModel" />
       <div *ngIf="phoneNumberModel.invalid && phoneNumberModel.touched" class="error-message">Numéro de téléphone invalide</div>
     </div>
+
     <button type="submit" [disabled]="!form.valid || form.pristine">Mettre à jour</button>
   </form>
 </div>

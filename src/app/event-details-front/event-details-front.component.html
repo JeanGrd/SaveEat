@@ -1,5 +1,9 @@
+<!-- Composant de carte d'événement -->
 <app-event-card></app-event-card>
+
+<!-- Div pour centrer horizontalement le bouton -->
 <div class="center-horizontal">
+  <!-- Bouton d'inscription -->
   <button *ngIf="!isLoading" class="btn-register" (click)="register()" [disabled]="eventFull" [ngClass]="{'full': eventFull}">
     {{ eventFull ? 'Complet' : "S'inscrire" }}
   </button>

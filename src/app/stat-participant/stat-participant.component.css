@@ -1,6 +1,6 @@
-/* Add the following styles for the stats-container and stat-card classes */
+/* Styles pour le conteneur des statistiques */
 .stats-container {
-  background-color: #a0e6f1; /* Light turquoise color */
+  background-color: #a0e6f1; /* Couleur turquoise claire */
   border-radius: 5px;
   padding: 20px;
   text-align: center;
@@ -10,6 +10,7 @@
   margin-bottom: 5vh;
 }
 
+/* Styles pour le titre des statistiques */
 .stats-container h4 {
   font-size: 1.3rem;
   font-weight: bold;

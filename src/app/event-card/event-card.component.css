@@ -1,9 +1,11 @@
+/* Styles de base du corps */
 body {
   font-family: 'Open Sans', sans-serif;
   background-color: #f5f5f5;
   padding-top: 100px;
 }
 
+/* Styles du conteneur du titre */
 .title-container {
   width: 60%;
   margin: 0 auto;
@@ -14,6 +16,7 @@ body {
   margin-top: 20px;
 }
 
+/* Styles du titre */
 .title-container h1 {
   margin: 0;
   font-family: 'Montserrat', sans-serif;
@@ -23,6 +26,7 @@ body {
   text-align: center;
 }
 
+/* Styles des détails de l'événement */
 .event-details {
   display: flex;
   flex-direction: column;
@@ -30,6 +34,7 @@ body {
   padding: 20px 60px;
 }
 
+/* Styles de la carte d'événement */
 .event-card {
   background-color: #f0f0f0;
   border-radius: 5px;
@@ -37,6 +42,7 @@ body {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
 }
 
+/* Styles du titre de l'événement */
 .event-card h2 {
   font-family: 'Montserrat', sans-serif;
   font-size: 1.7rem;
@@ -44,11 +50,13 @@ body {
   margin-bottom: 10px;
 }
 
+/* Styles des paragraphes de l'événement */
 .event-card p {
   font-size: 1.1rem;
   margin-bottom: 10px;
 }
 
+/* Style du survol du bouton d'inscription */
 .btn-register:hover {
   opacity: 0.6;
 }

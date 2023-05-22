@@ -8,14 +8,16 @@ import { AuthService } from './auth.service';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  messageData: MessageData | null = null;
+  messageData: MessageData | null = null; // Données du message initialisées à null
 
   constructor(public messageService: MessageService, private authService: AuthService) {
+    // Souscription au service de messages pour mettre à jour messageData lorsqu'un nouveau message est reçu
     this.messageService.message$.subscribe((messageData) => {
       this.messageData = messageData;
     });
   }
 
+  // Méthode pour vérifier si l'utilisateur est connecté
   isLoggedIn(): boolean {
     return this.authService.isLoggedIn();
   }

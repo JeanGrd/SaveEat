@@ -1,31 +1,36 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Liste d'événements</title>
-  <link rel="stylesheet" href="event-list-open.component.css">
-</head>
 <body>
 <div class="container">
   <div style="height: 30px;"></div>
+
+  <!-- Conteneur du titre -->
   <div class="title-container">
     <h1>Liste d'événements</h1>
   </div>
+
+  <!-- Champ de recherche -->
   <div class="search-container">
     <input type="text" [(ngModel)]="searchStr" (keyup)="searchEvents()" placeholder="Rechercher un évènement..."/>
   </div>
+
+  <!-- Liste des événements -->
   <div class="event-list">
     <div class="event-card" [ngClass]="{'dark': index % 2 === 1}" *ngFor="let event of events; let index = index">
       <h3>{{ event.event_name }}</h3>
       <p>{{ event.description }}</p>
+
+      <!-- Bouton de détails -->
       <button class="btn-edit" (click)="showDetails(event.id)">Détails</button>
       <span style="width: 10px; display: inline-block;"></span>
-      <button *ngIf="!event.isLoading" class="btn-register" [disabled]="event.isFull" (click)="register(event.id)" [ngClass]="{'full': event.isFull}">
+
+      <!-- Bouton d'inscription -->
+      <button *ngIf="!event.isLoading" class="btn-register" [disabled]="event.isFull" (click)="register(event.id)"
+              [ngClass]="{'full': event.isFull}">
         {{ event.isFull ? 'Complet' : "S'inscrire" }}
       </button>
     </div>
   </div>
+
+  <!-- Pagination -->
   <div class="pagination">
     <button class="btn-previous" (click)="previousPage()" [disabled]="currentPage === 1">Précédent</button>
     <span class="page-indicator">Page {{ currentPage }}</span>
@@ -33,4 +38,4 @@
   </div>
 </div>
 </body>
-</html>
+

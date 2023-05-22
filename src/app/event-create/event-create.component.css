@@ -129,3 +129,19 @@ button[type="submit"][disabled]:hover {
   transform: none;
   background-color: #1acead;
 }
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: gray;
+  text-align: center;
+}
+
+input[type="date"] {
+  height: 3.5rem;
+  width: 250px;
+  color: #c4c4c4;
+  display: block;
+  margin: auto;
+}
+

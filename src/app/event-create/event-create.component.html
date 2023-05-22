@@ -15,10 +15,12 @@
       <textarea id="description" name="description" ngModel placeholder="Description"></textarea>
     </div>
     <div>
-      <input type="date" id="registrationStartDate" name="registrationStartDate" ngModel [class.date-filled]="createForm.value.registrationStartDate" required placeholder="Date de début des inscriptions" />
+      <label for="registrationStartDate">Date de début des inscriptions</label>
+      <input type="date" id="registrationStartDate" name="registrationStartDate" ngModel [class.date-filled]="createForm.value.registrationStartDate" required />
     </div>
     <div>
-      <input type="date" id="registrationEndDate" name="registrationEndDate" ngModel [class.date-filled]="createForm.value.registrationEndDate" required placeholder="Date de fin des inscriptions" />
+      <label for="registrationEndDate">Date de fin des inscriptions</label>
+      <input type="date" id="registrationEndDate" name="registrationEndDate" ngModel [class.date-filled]="createForm.value.registrationEndDate" required />
       <div *ngIf="!validateDates(createForm.value.registrationStartDate,createForm.value.registrationEndDate)">
       </div>
     </div>

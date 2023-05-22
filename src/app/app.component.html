@@ -1,9 +1,15 @@
 <div class="message-container" *ngIf="messageData">
+  <!-- Élément de message avec une classe dynamique basée sur messageType -->
   <div class="message" [ngClass]="messageData.messageType">
     {{ messageData.message }}
   </div>
 </div>
-<app-header *ngIf="!isLoggedIn()"></app-header>
-<app-header-admin *ngIf="isLoggedIn()"></app-header-admin>
-<router-outlet></router-outlet>
+
+<!-- En-tête de l'application pour les utilisateurs non connectés -->
+<app-header-front *ngIf="!isLoggedIn()"></app-header-front>
+
+<!-- En-tête de l'application pour les utilisateurs connectés -->
+<app-header-back *ngIf="isLoggedIn()"></app-header-back>
+
+<!-- Outlet du routeur principal -->
 <router-outlet></router-outlet>

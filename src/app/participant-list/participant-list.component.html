@@ -1,14 +1,24 @@
+<!-- Lien vers les polices de caractères -->
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600|Open+Sans:400,400i,700&display=swap">
 
+<!-- Conteneur principal -->
 <div class="container">
+  <!-- Espace vide de 30px -->
   <div style="height: 30px;"></div>
+
+  <!-- Élément centré horizontalement -->
   <div class="center-horizontal">
     <app-export-csv-button [eventId]="eventId"></app-export-csv-button>
   </div>
+
+  <!-- Conteneur de recherche -->
   <div class="search-container">
     <input type="text" [(ngModel)]="searchTerm" (ngModelChange)="onSearch()" placeholder="Rechercher par email..">
   </div>
+
+  <!-- Liste d'événements -->
   <div class="event-list">
+    <!-- Carte d'événement avec classe dynamique "dark" pour les éléments impairs -->
     <div class="event-card" [ngClass]="{'dark': index % 2 === 1}" *ngFor="let participant of participants; let index = index">
       <h3>{{ participant.first_name }} {{ participant.last_name }}</h3>
       <p>{{ participant.email }}</p>
@@ -17,10 +27,14 @@
       <button class="btn-delete" (click)="deleteParticipant(participant.id)">Supprimer</button>
     </div>
   </div>
+
+  <!-- Élément centré horizontalement -->
   <div class="center-horizontal">
+    <!-- Bouton "Précédent" avec désactivation conditionnelle et appel à une fonction "prevPage" -->
     <button (click)="prevPage()" [disabled]="!hasPrevPage" class="btn-pagination">Précédent</button>
+    <!-- Indicateur de page courante -->
     <span class="page-indicator">Page {{ currentPage }}</span>
+    <!-- Bouton "Suivant" avec désactivation conditionnelle et appel à une fonction "nextPage" -->
     <button (click)="nextPage()" [disabled]="!hasNextPage" class="btn-pagination">Suivant</button>
   </div>
 </div>
-

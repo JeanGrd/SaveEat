@@ -1,30 +1,36 @@
+/* Importation des polices Google Fonts */
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap');
 
+/* Styles pour le corps du document */
 body {
   font-family: 'Roboto', sans-serif;
   background-color: #f0f0f0;
   padding-bottom: 5vh;
 }
 
+/* Styles pour les titres h2 et h3 */
 h2, h3 {
   font-family: 'Montserrat', sans-serif;
   letter-spacing: 1.5px;
   text-transform: uppercase;
   margin-bottom: 20px;
   padding-bottom: 20px;
-
 }
 
+/* Styles pour les paragraphes */
 p {
   font-family: 'Roboto', sans-serif;
   font-size: 20px;
   line-height: 1.6;
 }
 
+/* Styles pour les éléments strong */
 strong {
   font-weight: 700;
 }
+
+/* Styles pour un conteneur spécial avec une animation de changement de couleur d'arrière-plan */
 
 .special.container {
   background-color: #30cfc0;
@@ -36,12 +42,16 @@ strong {
   animation: background-color-change 5s infinite;
 }
 
+
+/* Styles pour une variation spéciale alternative */
 .special-alt {
   background-color: #f0f0f0;
   color: #333;
   width: 100%;
 }
 
+
+/* Styles pour un conteneur spécial de style 1 */
 .style1.container.special {
   background-color: #30cfc0;
   color: white;
@@ -50,6 +60,8 @@ strong {
   padding-top: 10px;
 }
 
+
+/* Styles pour un conteneur d'appel à l'action */
 .cta-container {
   background-color: #333;
   color: white;
@@ -58,47 +70,53 @@ strong {
 }
 
 
-
-
+/* Styles de transition pour mettre en évidence une section */
 .section-highlight {
   transition: background-color 0.3s ease-in-out;
 }
+/* Styles de transition pour mettre en évidence une section */
 
+/* Styles lorsque la section-highlight est survolée */
 .section-highlight:hover {
   background-color: #086553;
 }
 
 
+/* Styles lorsque la section-highlight2 est survolée */
 .section-highlight2:hover {
   background-color: #26de82;
 }
 
+
+/* Styles lorsque la section-highlight3 est survolée */
 .section-highlight3:hover {
   background-color: #31b472;
 }
 
 
-
-
+/* Styles pour la classe .text-section */
 .text-section {
   text-align: center;
   padding: 40px;
 }
 
+/* Styles pour la classe .text-section h2 */
 .text-section h2 {
   margin-bottom: 20px;
 }
 
+/* Styles pour la classe .text-section p */
 .text-section p {
   margin-bottom: 40px;
-
 }
 
+/* Styles pour les listes non ordonnées */
 ul {
   list-style-type: none;
   padding: 0;
 }
 
+/* Styles pour la classe .buttons */
 .buttons {
   display: flex;
   justify-content: center;
@@ -106,10 +124,12 @@ ul {
   flex-wrap: wrap;
 }
 
+/* Styles pour les éléments li de la classe .buttons */
 .buttons li {
   margin: 0 10px;
 }
 
+/* Styles pour les liens dans la classe .buttons a */
 .buttons a {
   display: inline-block;
   text-decoration: none;
@@ -123,10 +143,12 @@ ul {
   margin-right: 2vh;
 }
 
+/* Styles pour les liens dans la classe .buttons a:hover */
 .buttons a:hover {
   opacity: 0.8;
 }
 
+/* Styles pour la classe .button */
 .button {
   background-color: #30cfc0;
   color: white;
@@ -135,31 +157,31 @@ ul {
   transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border-color 0.3s ease-in-out;
 }
 
+/* Styles pour la classe .button:hover */
 .button:hover {
   background-color: white;
   color: #30cfc0;
   border: 2px solid #30cfc0;
 }
 
+/* Styles pour la classe .custom-section */
 .custom-section {
   background-color: transparent;
   margin-bottom: 20px;
 }
 
-.section{
+/* Styles pour la classe .section */
+.section {
   background-color: transparent;
   transition: background-color 0.3s ease-in-out;
 }
 
-
-
-
+/* Styles pour les images alignées à droite */
 .image-right {
   max-width: 100%;
 }
 
-
-
+/* Styles pour la classe .wrapper.style2.container.special-alt */
 .wrapper.style2.container.special-alt {
   display: flex;
   flex-wrap: wrap;
@@ -170,6 +192,7 @@ ul {
   text-align: center;
 }
 
+/* Animation pour la couleur d'arrière-plan changeante */
 @keyframes background-color-change {
   0%   { background-color: #57f3e4; }
   25%  { background-color: #4acec1; }
@@ -178,12 +201,14 @@ ul {
   100% { background-color: #57f3e4; }
 }
 
+/* Media queries pour les écrans de petite taille */
 @media (max-width: 767px) {
   .wrapper.style2.container.special-alt {
     flex-direction: column-reverse;
   }
 }
 
+/* Media queries pour les écrans de très petite taille */
 @media (max-width: 480px) {
   .buttons {
     flex-direction: column;
@@ -195,6 +220,7 @@ ul {
   }
 }
 
+/* Styles pour la classe .buttons a:active */
 .buttons a:active {
   transform: none;
 }

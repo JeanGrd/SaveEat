@@ -1,19 +1,23 @@
+/* Styles globaux pour le corps de la page */
 body {
   background-color: #eeebeb;
   font-family: Arial, sans-serif;
   margin: 0;
 }
 
+/* Styles pour le bouton de soumission du formulaire lorsque celui-ci est désactivé */
 button[type="submit"][disabled] {
   opacity: 0.5;
 }
 
+/* Styles pour le bouton de soumission du formulaire désactivé au survol */
 button[type="submit"][disabled]:hover {
   transform: none;
   background-color: #1acead;
   cursor: not-allowed;
 }
 
+/* Styles pour le conteneur principal */
 .container {
   display: flex;
   flex-direction: column;
@@ -25,6 +29,7 @@ button[type="submit"][disabled]:hover {
   padding: 2rem;
 }
 
+/* Styles pour le titre */
 .title {
   color: gray;
   font-weight: bold;
@@ -32,6 +37,7 @@ button[type="submit"][disabled]:hover {
   margin-bottom: 2rem;
 }
 
+/* Styles pour le formulaire */
 form {
   display: flex;
   flex-direction: column;
@@ -45,6 +51,7 @@ form {
   border: 1px solid #dcd9d9;
 }
 
+/* Styles pour les champs de saisie */
 input {
   border: 1px solid lightgray;
   padding: 0.5rem;
@@ -57,11 +64,13 @@ input {
   height: 4rem;
 }
 
+/* Styles pour le texte de l'attribut placeholder */
 input::placeholder {
   color: #989898;
   opacity: 0.5;
 }
 
+/* Styles pour le bouton */
 button {
   background-color: #1acead;
   border: 1px solid lightgray;
@@ -76,11 +85,13 @@ button {
   width: 10rem;
 }
 
+/* Styles au survol du bouton */
 button:hover {
   transform: scale(1.1);
   background-color: #2fee81;
 }
 
+/* Styles pour l'arrière-plan du conteneur principal */
 .container::before {
   content: "";
   position: fixed;
@@ -92,6 +103,7 @@ button:hover {
   z-index: -1;
 }
 
+/* Styles pour les messages d'erreur */
 .error-message {
   color: red;
   font-size: 12px;

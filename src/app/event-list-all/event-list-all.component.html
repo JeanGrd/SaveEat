@@ -1,26 +1,36 @@
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600|Open+Sans:400,400i,700&display=swap">
+<!-- Lien vers la feuille de style de la police Google Fonts -->
+<link rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600|Open+Sans:400,400i,700&display=swap">
 
+<!-- Conteneur principal -->
 <div class="container">
-  <div style="height: 30px;"></div>
+  <div style="height: 30px;"></div> <!-- Espace vide -->
+
   <div class="center-horizontal">
+    <!-- Bouton de création d'un évènement -->
     <button class="btn-create" (click)="create()">Création d'un évènement</button>
   </div>
+
   <div class="search-container">
+    <!-- Champ de recherche -->
     <input type="text" [(ngModel)]="searchTerm" (ngModelChange)="onSearch()" placeholder="Rechercher par titre...">
   </div>
+
   <div class="event-list">
+    <!-- Liste des événements -->
     <div class="event-card" [ngClass]="{'dark': index % 2 === 1}" *ngFor="let event of events; let index = index">
       <h3>{{ event.event_name }}</h3>
       <p>{{ event.description }}</p>
       <button class="btn-edit" (click)="showDetails(event.id)">Détails</button>
-      <span style="width: 10px; display: inline-block;"></span>
+      <span style="width: 10px; display: inline-block;"></span> <!-- Espace vide -->
       <button class="btn-delete" (click)="deleteEvent(event.id)">Supprimer</button>
     </div>
   </div>
+
   <div class="pagination-buttons">
+    <!-- Boutons de pagination -->
     <button [disabled]="currentPage === 1" (click)="previousPage()">Précédent</button>
     <span class="page-indicator">Page {{ currentPage }}</span>
     <button [disabled]="!hasMoreEvents" (click)="nextPage()">Suivant</button>
   </div>
 </div>
-

@@ -1,8 +1,14 @@
+<!-- Conteneur principal -->
 <div class="container">
+  <!-- Titre des statistiques générales -->
   <h4>Statistiques générales</h4>
+
+  <!-- Cartes de statistiques pour le nombre d'événements -->
   <div class="stat-card" *ngFor="let stats of total">
     <p>Nombre d'événements : {{ stats.event_count }}</p>
   </div>
+
+  <!-- Cartes de statistiques pour le nombre moyen de participants par événement -->
   <div class="stat-card" *ngFor="let stats of average">
     <p>Nombre moyen de participants par événement : {{ stats.average_participants }}</p>
   </div>
