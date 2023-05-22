@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { GeneralstatComponent } from './generalstat.component';
+import { StatGeneralComponent } from './stat-general.component';
 
 describe('GeneralstatComponent', () => {
-  let component: GeneralstatComponent;
-  let fixture: ComponentFixture<GeneralstatComponent>;
+  let component: StatGeneralComponent;
+  let fixture: ComponentFixture<StatGeneralComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ GeneralstatComponent ]
+      declarations: [ StatGeneralComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(GeneralstatComponent);
+    fixture = TestBed.createComponent(StatGeneralComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

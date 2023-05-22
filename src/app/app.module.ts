@@ -6,13 +6,13 @@ import { EventListComponent } from './event-list/event-list.component';
 import {HttpClientModule} from "@angular/common/http";
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { EventDetailsComponent } from './event-details/event-details.component';
-import { GeneralstatComponent } from './stat-general/generalstat.component';
+import { StatGeneralComponent } from './stat-general/stat-general.component';
 import { EventCreateComponent } from './event-create/event-create.component';
 import { FormsModule } from '@angular/forms';
 import { ParticipantListComponent } from './participant-list/participant-list.component';
 import { UpdateParticipantComponent } from './update-participant/update-participant.component';
 import { ExportCsvButtonComponent } from './export-csv-button/export-csv-button.component';
-import { StatsParticipantsComponent } from './stat-participant/stats-participants.component';
+import { StatParticipantComponent } from './stat-participant/stat-participant.component';
 import { AuthAdminComponent } from './auth-admin/auth-admin.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HomeComponent } from './home/home.component';
@@ -31,12 +31,12 @@ import { ContactComponent } from './contact/contact.component';
     AppComponent,
     EventListComponent,
     EventDetailsComponent,
-    GeneralstatComponent,
+    StatGeneralComponent,
     EventCreateComponent,
     ParticipantListComponent,
     UpdateParticipantComponent,
     ExportCsvButtonComponent,
-    StatsParticipantsComponent,
+    StatParticipantComponent,
     AuthAdminComponent,
     DashboardComponent,
     HomeComponent,

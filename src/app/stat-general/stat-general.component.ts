@@ -3,11 +3,11 @@ import {EventService} from "../event.service";
 import {ParticipantService} from "../participant.service";
 
 @Component({
-  selector: 'app-generalstat',
-  templateUrl: './generalstat.component.html',
-  styleUrls: ['./generalstat.component.css']
+  selector: 'app-stat-general',
+  templateUrl: './stat-general.component.html',
+  styleUrls: ['./stat-general.component.css']
 })
-export class GeneralstatComponent implements OnInit {
+export class StatGeneralComponent implements OnInit {
   total: any;
   average: any;
 

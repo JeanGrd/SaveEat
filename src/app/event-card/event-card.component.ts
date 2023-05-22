@@ -11,7 +11,8 @@ export class EventCardComponent implements OnInit {
   event: any;
   eventId?: number;
 
-  constructor(private route: ActivatedRoute, private eventService: EventService) {}
+  constructor(private route: ActivatedRoute, private eventService: EventService) {
+  }
 
   ngOnInit(): void {
     this.route.params.subscribe((params) => {

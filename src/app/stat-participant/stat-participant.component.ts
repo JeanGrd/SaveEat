@@ -3,11 +3,11 @@ import {ParticipantService} from "../participant.service";
 import {ActivatedRoute} from "@angular/router";
 
 @Component({
-  selector: 'app-stats-participants',
-  templateUrl: './stats-participants.component.html',
-  styleUrls: ['./stats-participants.component.css']
+  selector: 'app-stat-participant',
+  templateUrl: './stat-participant.component.html',
+  styleUrls: ['./stat-participant.component.css']
 })
-export class StatsParticipantsComponent implements OnInit {
+export class StatParticipantComponent implements OnInit {
   eventId?: number;
   total: any;
   constructor(private route: ActivatedRoute, private ParticipantService: ParticipantService) {}
