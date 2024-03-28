@@ -67,7 +67,7 @@
         },
         {
           "file": "package-lock.json",
-          "hash": "4439185409121580578"
+          "hash": "11786389086381247432"
         },
         {
           "file": "package.json",
@@ -200,7 +200,7 @@
         },
         {
           "file": "src/app/contact/contact.component.html",
-          "hash": "6289077741408615647"
+          "hash": "14702218598424699551"
         },
         {
           "file": "src/app/contact/contact.component.spec.ts",
@@ -360,7 +360,7 @@
         },
         {
           "file": "src/app/event-list-open/event-list-open.component.html",
-          "hash": "1367807599290835804"
+          "hash": "12561715140239757419"
         },
         {
           "file": "src/app/event-list-open/event-list-open.component.spec.ts",
@@ -446,7 +446,7 @@
         },
         {
           "file": "src/app/header-back/header-back.component.html",
-          "hash": "11078059314442615323"
+          "hash": "17105165601634138528"
         },
         {
           "file": "src/app/header-back/header-back.component.spec.ts",
@@ -469,7 +469,7 @@
         },
         {
           "file": "src/app/header-front/header-front.component.html",
-          "hash": "9387165928977647850"
+          "hash": "13399295880444497134"
         },
         {
           "file": "src/app/header-front/header-front.component.spec.ts",
@@ -491,7 +491,7 @@
         },
         {
           "file": "src/app/home/home.component.html",
-          "hash": "634137799815192812"
+          "hash": "15011648488506057621"
         },
         {
           "file": "src/app/home/home.component.spec.ts",
@@ -543,7 +543,7 @@
         },
         {
           "file": "src/app/notre-mission/notre-mission.component.html",
-          "hash": "17360398956950915712"
+          "hash": "13681340696886999980"
         },
         {
           "file": "src/app/notre-mission/notre-mission.component.spec.ts",
@@ -676,23 +676,27 @@
         },
         {
           "file": "src/assets/event1.jpg",
-          "hash": "16629999987041609694"
+          "hash": "15673168944989833815"
         },
         {
           "file": "src/assets/event2.jpg",
-          "hash": "4651448423136849713"
+          "hash": "5916125909576059859"
         },
         {
           "file": "src/assets/event3.jpg",
-          "hash": "1291774008489273334"
+          "hash": "9782354461498668250"
         },
         {
           "file": "src/assets/event4.jpg",
-          "hash": "6272411129334958845"
+          "hash": "2052312058259214752"
         },
         {
           "file": "src/assets/event5.jpg",
-          "hash": "10681196248672820318"
+          "hash": "14153166389860499680"
+        },
+        {
+          "file": "src/assets/home-image.jpg",
+          "hash": "1447828223768288167"
         },
         {
           "file": "src/assets/home-image.png",
