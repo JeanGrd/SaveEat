@@ -22,11 +22,6 @@
       <button class="btn-edit" (click)="showDetails(event.id)">Détails</button>
       <span style="width: 10px; display: inline-block;"></span>
 
-      <!-- Bouton d'inscription -->
-      <button *ngIf="!event.isLoading" class="btn-register" [disabled]="event.isFull" (click)="register(event.id)"
-              [ngClass]="{'full': event.isFull}">
-        {{ event.isFull ? 'Complet' : "S'inscrire" }}
-      </button>
     </div>
   </div>
 
