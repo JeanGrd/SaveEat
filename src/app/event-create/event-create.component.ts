@@ -24,7 +24,7 @@ export class EventCreateComponent {
   // Cette méthode est déclenchée à la soumission du formulaire
   onSubmit(form: NgForm) {
     // On vérifie que le formulaire est valide et que la date de début est inférieure à la date de fin
-    if (form.valid && this.validateDates(form.value.registrationStartDate, form.value.registrationEndDate)) {
+    if (form.valid) {
       // On crée un objet avec les données du formulaire
       const eventData = {
         acronym: form.value.acronym.toString(),

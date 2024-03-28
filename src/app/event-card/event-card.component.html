@@ -1,6 +1,6 @@
 <!-- Section du conteneur du titre -->
 <div class="title-container">
-  <h1>Détails de l'événement</h1>
+  <h1>Détails du produit</h1>
 </div>
 
 <!-- Section du conteneur principal -->
@@ -9,12 +9,12 @@
     <!-- Boucle pour chaque événement dans la liste des événements -->
     <div class="event-card" *ngFor="let event of event">
       <h2>{{ event.event_name }}</h2>
-      <p class="event-acronym">Acronyme : {{ event.acronym }}</p>
-      <p class="event-location">Location : {{ event.location }}</p>
-      <p class="event-dates">Date :
+      <p class="event-acronym">Type : {{ event.acronym }}</p>
+      <p class="event-location">Origine : {{ event.location }}</p>
+      <p class="event-dates">Date de péremption:
         {{ event.registration_start_date | date:'shortDate' }} - {{ event.registration_end_date | date:'shortDate' }}
       </p>
-      <p class="event-max-participants">Nombre de participants maximum : {{ event.max_participants }}</p>
+      <p class="event-max-participants"> Quantité disponible : {{ event.max_participants }}</p>
       <p class="event-description">Description : {{ event.description }}</p>
     </div>
   </div>

@@ -1,32 +1,28 @@
 <div class="container">
   <div class="form-background"></div>
-  <h1 class="title">Créer un événement</h1>
+  <h1 class="title">Ajouter un produit</h1>
   <form #createForm="ngForm" (ngSubmit)="onSubmit(createForm)">
     <div>
-      <input type="text" id="acronym" name="acronym" ngModel required placeholder="Acronyme" />
+      <input type="text" id="acronym" name="acronym" ngModel required placeholder="Type" />
     </div>
     <div>
-      <input type="text" id="eventName" name="eventName" ngModel required placeholder="Nom de l'événement" />
+      <input type="text" id="eventName" name="eventName" ngModel required placeholder="Origine" />
     </div>
     <div>
-      <input type="text" id="location" name="location" ngModel required placeholder="Lieu" />
+      <input type="text" id="location" name="location" ngModel required placeholder="Prix" />
     </div>
     <div>
       <textarea id="description" name="description" ngModel placeholder="Description"></textarea>
     </div>
     <div>
-      <label for="registrationStartDate">Date de début des inscriptions</label>
+      <label for="registrationStartDate">Date de péremption</label>
       <input type="date" id="registrationStartDate" name="registrationStartDate" ngModel [class.date-filled]="createForm.value.registrationStartDate" required />
     </div>
+
+
     <div>
-      <label for="registrationEndDate">Date de fin des inscriptions</label>
-      <input type="date" id="registrationEndDate" name="registrationEndDate" ngModel [class.date-filled]="createForm.value.registrationEndDate" required />
-      <div *ngIf="!validateDates(createForm.value.registrationStartDate,createForm.value.registrationEndDate)">
-      </div>
+      <input type="number" id="maxParticipants" name="maxParticipants" ngModel required placeholder="Quantité disponible" min="0" />
     </div>
-    <div>
-      <input type="number" id="maxParticipants" name="maxParticipants" ngModel required placeholder="Nombre maximum de participants" min="0" />
-    </div>
-    <button type="submit" [disabled]="!createForm.valid">Créer un événement</button>
+    <button type="submit" [disabled]="!createForm.valid">Ajouter un produit</button>
   </form>
 </div>
