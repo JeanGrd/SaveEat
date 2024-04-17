@@ -11,6 +11,7 @@ import {Location} from '@angular/common'; // Importe Location pour modifier l'UR
   templateUrl: './event-create.component.html',
   styleUrls: ['./event-create.component.css'],
 })
+
 export class EventCreateComponent {
   // Injection des services et modules nécessaires
   constructor(

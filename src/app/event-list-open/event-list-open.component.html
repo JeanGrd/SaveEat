@@ -9,17 +9,17 @@
 
   <!-- Champ de recherche -->
   <div class="search-container">
-    <input type="text" [(ngModel)]="searchStr" (keyup)="searchEvents()" placeholder="Rechercher un produit..."/>
+    <input type="text" [(ngModel)]="searchStr" (keyup)="searchProducts()" placeholder="Rechercher un produit..."/>
   </div>
 
   <!-- Liste des événements -->
   <div class="event-list">
-    <div class="event-card" [ngClass]="{'dark': index % 2 === 1}" *ngFor="let event of events; let index = index">
-      <h3>{{ event.event_name }}</h3>
-      <p>{{ event.description }}</p>
+    <div class="event-card" [ngClass]="{'dark': index % 2 === 1}" *ngFor="let stock of products; let index = index">
+      <h3>{{ stock.NAME }}</h3>
+      <p>{{ stock.CATEGORY_ID }} €</p>
 
       <!-- Bouton de détails -->
-      <button class="btn-edit" (click)="showDetails(event.id)">Détails</button>
+      <button class="btn-edit" (click)="showDetails(stock.PRODUCT_ID)">Détails</button>
       <span style="width: 10px; display: inline-block;"></span>
 
     </div>
@@ -33,4 +33,3 @@
   </div>
 </div>
 </body>
-

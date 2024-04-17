@@ -1,79 +1,58 @@
-// event-list-open.component.ts
-import {Component, OnInit} from '@angular/core';
-import {EventService} from '../event.service'; // Import du service EventService pour interagir avec les données d'événements
-import {Router} from '@angular/router'; // Import du module Router pour naviguer entre les composants
-import {ChangeDetectorRef} from '@angular/core'; // Import de ChangeDetectorRef pour déclencher la détection des changements dans la vue
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
+import { ProductService } from '../product.service';
+import { StatisticsService } from '../statistics.service';
+import { Router } from '@angular/router';
 
-// Décorateur du composant avec son sélecteur, son modèle de vue et sa feuille de style
 @Component({
   selector: 'app-event-list-open',
   templateUrl: './event-list-open.component.html',
   styleUrls: ['./event-list-open.component.css']
 })
 export class EventListOpenComponent implements OnInit {
-  events: any[] = []; // Stocke la liste d'événements ouverts
-  currentPage: number = 1; // Stocke la page courante de la liste
-  hasMorePages: boolean = false; // Indique s'il reste des pages à charger
-  searchStr: string = ''; // Stocke le terme de recherche pour filtrer les événements
+  products: any[] = [];
+  currentPage: number = 1;
+  hasMorePages: boolean = false;
+  searchStr: string = '';
 
   constructor(
-    private eventService: EventService,
+    private productService: ProductService,
+    private statisticsService: StatisticsService,
     private router: Router,
     private changeDetector: ChangeDetectorRef,
-  ) {
-  }
+  ) {}
 
-  // Cette méthode est déclenchée après la création du composant par Angular
   ngOnInit(): void {
-    this.fetchEvents();
+    this.fetchProductsAndQuantities();
   }
 
-  // Cette méthode charge les événements ouverts de la page courante
-  fetchEvents(): void {
-    this.eventService.getEventsOpen(this.currentPage, this.searchStr).subscribe(data => {
-      this.events = data.events;
-      this.hasMorePages = (data.total > this.currentPage * 10);
-      this.addIsFullPropertyToEvents();
-      this.changeDetector.detectChanges();
-    });
-  }
-
-  // Cette méthode ajoute la propriété isFull à chaque événement de la liste
-  addIsFullPropertyToEvents(): void {
-    this.events.forEach(event => {
-      event.isLoading = true;
-      this.eventService.isFull(event.id).subscribe(isFull => {
-        event.isFull = isFull;
-        event.isLoading = false;
+  fetchProductsAndQuantities(): void {
+    this.productService.getAllProducts().subscribe(products => {
+      this.products = products; // Assuming the API returns an array of products
+      this.products.forEach(product => {
+        this.statisticsService.getQuantityByProductId(product.PRODUCT_ID).subscribe(quantity => {
+          product.quantity = quantity; // Assuming `getQuantityByProductId` returns the quantity for a product
+          this.changeDetector.detectChanges();
+        });
       });
     });
   }
 
-  // Cette méthode redirige l'utilisateur vers la page d'inscription à un événement
-  register(eventId: number): void {
-    this.router.navigate(['events', eventId, 'inscription']);
+  showDetails(productId: number): void {
+    this.router.navigate(['/products', productId]);
   }
 
-  // Cette méthode redirige l'utilisateur vers la page de détails d'un événement
-  showDetails(eventId: number): void {
-    this.router.navigate(['events/', eventId]);
-  }
-
-  // Cette méthode est déclenchée lorsque l'utilisateur veut voir la page suivante de la liste d'événements ouverts
   nextPage(): void {
     this.currentPage += 1;
-    this.fetchEvents();
+    this.fetchProductsAndQuantities();
   }
 
-  // Cette méthode est déclenchée lorsque l'utilisateur veut voir la page précédente de la liste d'événements ouverts
   previousPage(): void {
     this.currentPage -= 1;
-    this.fetchEvents();
+    this.fetchProductsAndQuantities();
   }
 
-  // Cette méthode est déclenchée lorsque l'utilisateur effectue une recherche parmi les événements ouverts
-  searchEvents(): void {
+  searchProducts(): void {
     this.currentPage = 1;
-    this.fetchEvents();
+    this.fetchProductsAndQuantities(); // Assuming your API supports searching; adjust accordingly
   }
 }

@@ -67,7 +67,7 @@
         },
         {
           "file": "package-lock.json",
-          "hash": "11786389086381247432"
+          "hash": "13737946288124344877"
         },
         {
           "file": "package.json",
@@ -106,7 +106,7 @@
         },
         {
           "file": "src/app/app-routing.module.ts",
-          "hash": "11722664622115736774",
+          "hash": "12467511738530384167",
           "deps": [
             "npm:@angular/core",
             "npm:@angular/router"
@@ -244,7 +244,7 @@
         },
         {
           "file": "src/app/event-card/event-card.component.html",
-          "hash": "1859346639994200443"
+          "hash": "7130173655240818627"
         },
         {
           "file": "src/app/event-card/event-card.component.spec.ts",
@@ -255,7 +255,7 @@
         },
         {
           "file": "src/app/event-card/event-card.component.ts",
-          "hash": "4708512018243366599",
+          "hash": "8937367552696114473",
           "deps": [
             "npm:@angular/core",
             "npm:@angular/router"
@@ -267,7 +267,7 @@
         },
         {
           "file": "src/app/event-create/event-create.component.html",
-          "hash": "13067822981025104484"
+          "hash": "16208024253960683769"
         },
         {
           "file": "src/app/event-create/event-create.component.spec.ts",
@@ -278,7 +278,7 @@
         },
         {
           "file": "src/app/event-create/event-create.component.ts",
-          "hash": "9846427990940061162",
+          "hash": "15794997052480584752",
           "deps": [
             "npm:@angular/core",
             "npm:@angular/forms",
@@ -292,7 +292,7 @@
         },
         {
           "file": "src/app/event-details-back/event-details-back.component.html",
-          "hash": "10264641439728061045"
+          "hash": "10922514949119384439"
         },
         {
           "file": "src/app/event-details-back/event-details-back.component.spec.ts",
@@ -314,7 +314,7 @@
         },
         {
           "file": "src/app/event-details-front/event-details-front.component.html",
-          "hash": "8386098856963454115"
+          "hash": "10922514949119384439"
         },
         {
           "file": "src/app/event-details-front/event-details-front.component.spec.ts",
@@ -325,7 +325,7 @@
         },
         {
           "file": "src/app/event-details-front/event-details-front.component.ts",
-          "hash": "12319921972308068105",
+          "hash": "9665340501548582227",
           "deps": [
             "npm:@angular/core",
             "npm:@angular/router"
@@ -337,7 +337,7 @@
         },
         {
           "file": "src/app/event-list-all/event-list-all.component.html",
-          "hash": "2303867996071237767"
+          "hash": "8048935285263484051"
         },
         {
           "file": "src/app/event-list-all/event-list-all.component.spec.ts",
@@ -360,7 +360,7 @@
         },
         {
           "file": "src/app/event-list-open/event-list-open.component.html",
-          "hash": "12561715140239757419"
+          "hash": "14769428513516090207"
         },
         {
           "file": "src/app/event-list-open/event-list-open.component.spec.ts",
@@ -371,7 +371,7 @@
         },
         {
           "file": "src/app/event-list-open/event-list-open.component.ts",
-          "hash": "13709063653423218977",
+          "hash": "16999655901256565931",
           "deps": [
             "npm:@angular/core",
             "npm:@angular/router"
@@ -446,7 +446,7 @@
         },
         {
           "file": "src/app/header-back/header-back.component.html",
-          "hash": "17105165601634138528"
+          "hash": "10106897151235805277"
         },
         {
           "file": "src/app/header-back/header-back.component.spec.ts",
@@ -469,7 +469,7 @@
         },
         {
           "file": "src/app/header-front/header-front.component.html",
-          "hash": "13399295880444497134"
+          "hash": "14303535342486378821"
         },
         {
           "file": "src/app/header-front/header-front.component.spec.ts",
@@ -491,7 +491,7 @@
         },
         {
           "file": "src/app/home/home.component.html",
-          "hash": "15011648488506057621"
+          "hash": "11780388108541656551"
         },
         {
           "file": "src/app/home/home.component.spec.ts",
@@ -543,7 +543,7 @@
         },
         {
           "file": "src/app/notre-mission/notre-mission.component.html",
-          "hash": "13681340696886999980"
+          "hash": "14542028282844716163"
         },
         {
           "file": "src/app/notre-mission/notre-mission.component.spec.ts",
@@ -642,6 +642,22 @@
           "deps": [
             "npm:@angular/core",
             "npm:@angular/router",
+            "npm:rxjs"
+          ]
+        },
+        {
+          "file": "src/app/stock.service.spec.ts",
+          "hash": "510981743567214729",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "src/app/stock.service.ts",
+          "hash": "9381351579441550877",
+          "deps": [
+            "npm:@angular/common",
+            "npm:@angular/core",
             "npm:rxjs"
           ]
         },

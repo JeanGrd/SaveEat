@@ -19,8 +19,8 @@ const routes: Routes = [
   { path: '', component: HomeComponent }, // Route pour la page d'accueil
   { path: 'notre-mission', component: NotreMissionComponent }, // Route pour la page notre mission
   { path: 'contact', component: ContactComponent }, // Route pour la page de contact
-  { path: 'events', component: EventListOpenComponent }, // Route pour la liste des événements ouverts (côté front)
-  { path: 'events/:eventId', component: EventDetailsFrontComponent }, // Route pour les détails d'un événement (côté front)
+  { path: 'stock-items', component: EventListOpenComponent }, // Route pour la liste des événements ouverts (côté front)
+  { path: 'stock-items/:id', component: EventDetailsFrontComponent }, // Route pour les détails d'un événement (côté front)
   { path: 'events/:eventId/inscription', component: FormulaireInscriptionComponent }, // Route pour le formulaire d'inscription à un événement
   { path: 'login', component: AuthAdminComponent, canActivate: [LoginGuard] }, // Route pour la page de connexion (protégée par LoginGuard)
   { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] }, // Route pour le tableau de bord admin (protégée par AuthGuard)
