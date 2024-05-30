@@ -4,14 +4,13 @@
 </div>
 
 <!-- Section du conteneur principal -->
-<div class="container">
+<div class="container" *ngIf="product">
   <div class="event-details">
-    <!-- Boucle pour chaque événement dans la liste des événements -->
-    <div class="event-card" *ngFor="let stock of stock">
-      <h2>{{ stock.ProductName }}</h2>
-      <p class="event-acronym">Catégorie : {{ stock.Category }}</p>
-      <p class="event-max-participants"> Quantité restante : {{ stock.Quantity }} {{stock.Unit}}</p>
-      <p class="event-description">Prix : {{ stock.SellingPrice }} € / {{stock.Unit}}</p>
+    <div class="event-card">
+      <h2>{{ product.name }}</h2> <!-- Assuming 'name' is the correct field -->
+      <p class="event-acronym">Catégorie : {{ product.CATEGORY_NAME }}</p> <!-- Adjusted for direct property access -->
+      <p class="event-max-participants">Description : {{ product.DESCRIPTION }}</p> <!-- Assuming 'quantity' is a direct field -->
+      <p class="event-description">Quantité restante : {{ product.QUANTITY }}</p> <!-- Assuming 'sellingPrice' is the correct field -->
     </div>
   </div>
 </div>

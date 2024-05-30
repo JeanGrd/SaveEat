@@ -19,14 +19,14 @@ const routes: Routes = [
   { path: '', component: HomeComponent }, // Route pour la page d'accueil
   { path: 'notre-mission', component: NotreMissionComponent }, // Route pour la page notre mission
   { path: 'contact', component: ContactComponent }, // Route pour la page de contact
-  { path: 'stock-items', component: EventListOpenComponent }, // Route pour la liste des événements ouverts (côté front)
-  { path: 'stock-items/:id', component: EventDetailsFrontComponent }, // Route pour les détails d'un événement (côté front)
+  { path: 'products', component: EventListOpenComponent }, // Route pour la liste des événements ouverts (côté front)
+  { path: 'products/:productID', component: EventDetailsFrontComponent }, // Route pour les détails d'un événement (côté front)
   { path: 'events/:eventId/inscription', component: FormulaireInscriptionComponent }, // Route pour le formulaire d'inscription à un événement
   { path: 'login', component: AuthAdminComponent, canActivate: [LoginGuard] }, // Route pour la page de connexion (protégée par LoginGuard)
   { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] }, // Route pour le tableau de bord admin (protégée par AuthGuard)
-  { path: 'dashboard/create', component: EventCreateComponent, canActivate: [AuthGuard] }, // Route pour la création d'un événement (protégée par AuthGuard)
-  { path: 'dashboard/:eventId', component: EventDetailsBackComponent, canActivate: [AuthGuard] }, // Route pour les détails d'un événement (côté back, protégée par AuthGuard)
-  { path: 'dashboard/:eventId/:participantId', component: UpdateParticipantComponent, canActivate: [AuthGuard] }, // Route pour la mise à jour d'un participant à un événement (protégée par AuthGuard)
+  { path: 'dashboard/product/:productID/create', component: EventCreateComponent, canActivate: [AuthGuard] }, // Route pour la création d'un événement (protégée par AuthGuard)
+  { path: 'dashboard/product/:productID', component: EventDetailsBackComponent, canActivate: [AuthGuard] },
+  { path: 'dashboard/:productID/:participantId', component: UpdateParticipantComponent, canActivate: [AuthGuard] }, // Route pour la mise à jour d'un participant à un événement (protégée par AuthGuard)
 ];
 
 @NgModule({

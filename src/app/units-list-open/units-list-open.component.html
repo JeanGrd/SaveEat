@@ -2,14 +2,15 @@
 <div class="container">
   <div style="height: 30px;"></div>
   <div class="search-container">
-    <input type="text" placeholder="Rechercher un produit...">
+    <input type="text" placeholder="Rechercher une unité...">
   </div>
   <div class="event-list">
     <div class="event-card" [ngClass]="{'dark': index % 2 === 1}" *ngFor="let product of products; let index = index">
-      <h3>{{ product.NAME }}</h3>
-      <p>Catégorie : {{ product.CATEGORY_NAME }}</p>
-      <p>Quantité : {{ product.QUANTITY }}</p>
-      <button class="btn-edit" (click)="showDetails(product.PRODUCT_ID)">Administrer</button>
+      <h3>{{ product.PRODUCT_NAME }}</h3>
+      <p>Marque : {{ product.BRAND }}</p>
+      <p>Description : {{ product.DESCRIPTION }}</p>
+      <p>Prix : {{ product.SALE_PRICE }} €</p>
+      <p>Date d'expiration : {{ product.EXPIRATION_DATE }}</p>
     </div>
   </div>
   <div class="pagination-buttons">

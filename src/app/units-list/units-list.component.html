@@ -1,0 +1,27 @@
+<!-- product-list-all.component.html -->
+<div class="container">
+  <div style="height: 30px;"></div>
+  <div class="search-container">
+    <input type="text" placeholder="Rechercher une unité...">
+  </div>
+  <div class="event-list">
+    <div class="event-card" [ngClass]="{'dark': index % 2 === 1}" *ngFor="let product of products; let index = index">
+      <h3>{{ product.PRODUCT_NAME }}</h3>
+      <p>Date d'expiration : {{ product.EXPIRATION_DATE }}</p>
+      <p>Marque : {{ product.BRAND }}</p>
+      <p>Fournisseur : {{ product.SUPPLIER_NAME }}</p>
+      <p>Prix d'achat: {{ product.PURCHASE_PRICE }} €</p>
+      <p>Prix de revente : {{ product.SALE_PRICE }} €</p>
+      <p>Description : {{ product.DESCRIPTION }}</p>
+
+      <button class="btn-edit" (click)="showDetails(product.UNIT_ID)">Modifier</button>
+      <span style="width: 10px; display: inline-block;"></span>
+      <button class="btn-delete" (click)="delete(product.UNIT_ID)">Supprimer</button>
+    </div>
+  </div>
+  <div class="pagination-buttons">
+    <button class="btn-previous" (click)="previousPage()" [disabled]="currentPage === 1">Précédent</button>
+    <span class="page-indicator">Page {{ currentPage }}</span>
+    <button class="btn-next" (click)="nextPage()" [disabled]="!hasMorePages">Suivant</button>
+  </div>
+</div>

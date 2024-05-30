@@ -16,6 +16,9 @@ export class UnitService {
     return this.http.get<any[]>(this.apiUrl);
   }
 
+  getAllByProduct(productId: number | undefined): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/product/${productId}`);
+  }
   // Get a single unit by its ID
   getUnitById(unitId: number): Observable<any> {
     return this.http.get<any>(`${this.apiUrl}/${unitId}`);

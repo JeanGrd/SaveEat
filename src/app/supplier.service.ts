@@ -26,6 +26,10 @@ export class SupplierService {
     return this.http.post(this.apiUrl, supplierData);
   }
 
+  getSupplierIdByName(name: string): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/name/${name}`);
+  }
+
   // Update an existing supplier
   updateSupplier(supplierId: number, supplierData: any): Observable<any> {
     return this.http.put(`${this.apiUrl}/${supplierId}`, supplierData);

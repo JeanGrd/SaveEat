@@ -25,4 +25,9 @@ export class StatisticsService {
   getSupplierActivity(): Observable<any[]> {
     return this.http.get<any[]>(`${this.apiUrl}/supplier-activity`);
   }
+
+  getQuantityByProductId(productId: number): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/${productId}/quantity`);
+  }
+
 }

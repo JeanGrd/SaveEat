@@ -30,7 +30,7 @@ export class EventListOpenComponent implements OnInit {
       this.products = products; // Assuming the API returns an array of products
       this.products.forEach(product => {
         this.statisticsService.getQuantityByProductId(product.PRODUCT_ID).subscribe(quantity => {
-          product.quantity = quantity; // Assuming `getQuantityByProductId` returns the quantity for a product
+          product.quantity = quantity.quantity;
           this.changeDetector.detectChanges();
         });
       });
@@ -53,6 +53,6 @@ export class EventListOpenComponent implements OnInit {
 
   searchProducts(): void {
     this.currentPage = 1;
-    this.fetchProductsAndQuantities(); // Assuming your API supports searching; adjust accordingly
+    this.fetchProductsAndQuantities();
   }
 }

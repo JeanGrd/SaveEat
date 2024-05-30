@@ -106,7 +106,7 @@
         },
         {
           "file": "src/app/app-routing.module.ts",
-          "hash": "12467511738530384167",
+          "hash": "15221198950013118200",
           "deps": [
             "npm:@angular/core",
             "npm:@angular/router"
@@ -171,7 +171,7 @@
         },
         {
           "file": "src/app/auth.guard.ts",
-          "hash": "713742492108888226",
+          "hash": "14329030834172998322",
           "deps": [
             "npm:@angular/core",
             "npm:@angular/router"
@@ -186,12 +186,28 @@
         },
         {
           "file": "src/app/auth.service.ts",
-          "hash": "4521577788340155194",
+          "hash": "10741271412728060212",
           "deps": [
             "npm:@angular/common",
             "npm:@angular/core",
             "npm:rxjs",
             "npm:jwt-decode"
+          ]
+        },
+        {
+          "file": "src/app/category.service.spec.ts",
+          "hash": "12647900168126196293",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "src/app/category.service.ts",
+          "hash": "12541023975576170048",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/common",
+            "npm:rxjs"
           ]
         },
         {
@@ -244,7 +260,7 @@
         },
         {
           "file": "src/app/event-card/event-card.component.html",
-          "hash": "7130173655240818627"
+          "hash": "14289125967956493382"
         },
         {
           "file": "src/app/event-card/event-card.component.spec.ts",
@@ -255,7 +271,7 @@
         },
         {
           "file": "src/app/event-card/event-card.component.ts",
-          "hash": "8937367552696114473",
+          "hash": "1963860531497120209",
           "deps": [
             "npm:@angular/core",
             "npm:@angular/router"
@@ -325,7 +341,7 @@
         },
         {
           "file": "src/app/event-details-front/event-details-front.component.ts",
-          "hash": "9665340501548582227",
+          "hash": "694897890602419129",
           "deps": [
             "npm:@angular/core",
             "npm:@angular/router"
@@ -337,7 +353,7 @@
         },
         {
           "file": "src/app/event-list-all/event-list-all.component.html",
-          "hash": "8048935285263484051"
+          "hash": "11466889449023225630"
         },
         {
           "file": "src/app/event-list-all/event-list-all.component.spec.ts",
@@ -348,7 +364,7 @@
         },
         {
           "file": "src/app/event-list-all/event-list-all.component.ts",
-          "hash": "13226979773756482335",
+          "hash": "15588160299704756292",
           "deps": [
             "npm:@angular/core",
             "npm:@angular/router"
@@ -360,7 +376,7 @@
         },
         {
           "file": "src/app/event-list-open/event-list-open.component.html",
-          "hash": "14769428513516090207"
+          "hash": "17983379166116269770"
         },
         {
           "file": "src/app/event-list-open/event-list-open.component.spec.ts",
@@ -371,7 +387,7 @@
         },
         {
           "file": "src/app/event-list-open/event-list-open.component.ts",
-          "hash": "16999655901256565931",
+          "hash": "8480447431243943265",
           "deps": [
             "npm:@angular/core",
             "npm:@angular/router"
@@ -469,7 +485,7 @@
         },
         {
           "file": "src/app/header-front/header-front.component.html",
-          "hash": "14303535342486378821"
+          "hash": "722307819814063670"
         },
         {
           "file": "src/app/header-front/header-front.component.spec.ts",
@@ -487,11 +503,11 @@
         },
         {
           "file": "src/app/home/home.component.css",
-          "hash": "10488610721875300583"
+          "hash": "9669204015671102033"
         },
         {
           "file": "src/app/home/home.component.html",
-          "hash": "11780388108541656551"
+          "hash": "5290133789337004436"
         },
         {
           "file": "src/app/home/home.component.spec.ts",
@@ -543,7 +559,7 @@
         },
         {
           "file": "src/app/notre-mission/notre-mission.component.html",
-          "hash": "14542028282844716163"
+          "hash": "11920180309150477798"
         },
         {
           "file": "src/app/notre-mission/notre-mission.component.spec.ts",
@@ -599,6 +615,22 @@
           ]
         },
         {
+          "file": "src/app/product.service.spec.ts",
+          "hash": "15641537539620615365",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "src/app/product.service.ts",
+          "hash": "6851077288668794275",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/common",
+            "npm:rxjs"
+          ]
+        },
+        {
           "file": "src/app/stat-general/stat-general.component.css",
           "hash": "1175817698884636120"
         },
@@ -646,6 +678,22 @@
           ]
         },
         {
+          "file": "src/app/statistics.service.spec.ts",
+          "hash": "2857031237247756679",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "src/app/statistics.service.ts",
+          "hash": "18213538021917923121",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/common",
+            "npm:rxjs"
+          ]
+        },
+        {
           "file": "src/app/stock.service.spec.ts",
           "hash": "510981743567214729",
           "deps": [
@@ -658,6 +706,54 @@
           "deps": [
             "npm:@angular/common",
             "npm:@angular/core",
+            "npm:rxjs"
+          ]
+        },
+        {
+          "file": "src/app/supplier.service.spec.ts",
+          "hash": "12848674054832960959",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "src/app/supplier.service.ts",
+          "hash": "1255364702308003584",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/common",
+            "npm:rxjs"
+          ]
+        },
+        {
+          "file": "src/app/transaction.service.spec.ts",
+          "hash": "8368209296538888607",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "src/app/transaction.service.ts",
+          "hash": "13263624096950177349",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/common",
+            "npm:rxjs"
+          ]
+        },
+        {
+          "file": "src/app/unit.service.spec.ts",
+          "hash": "8652381445745306929",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "src/app/unit.service.ts",
+          "hash": "17756908104143535715",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/common",
             "npm:rxjs"
           ]
         },
@@ -684,6 +780,22 @@
             "npm:@angular/forms",
             "npm:@angular/router",
             "npm:@angular/common"
+          ]
+        },
+        {
+          "file": "src/app/user.service.spec.ts",
+          "hash": "5664179134821074798",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "src/app/user.service.ts",
+          "hash": "4151291568655966233",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/common",
+            "npm:rxjs"
           ]
         },
         {

@@ -3,26 +3,31 @@
   <h1 class="title">Ajouter un produit</h1>
   <form #createForm="ngForm" (ngSubmit)="onSubmit(createForm)">
     <div>
-      <input type="text" id="acronym" name="acronym" ngModel required placeholder="Type" />
+      <input type="text" id="brand" name="brand" ngModel required placeholder="Marque" />
     </div>
     <div>
-      <input type="text" id="eventName" name="eventName" ngModel required placeholder="Origine" />
+      <textarea type="text" id="description" name="description" ngModel required placeholder="Description"></textarea>
     </div>
     <div>
-      <input type="text" id="location" name="location" ngModel required placeholder="Prix" />
+      <label for="supplierName">Fournisseur</label>
+      <select id="supplierName" name="supplierName" ngModel required>
+        <option *ngFor="let supplier of suppliers" [value]="supplier.NAME">{{ supplier.NAME }}</option>
+      </select>
     </div>
     <div>
-      <textarea id="description" name="description" ngModel placeholder="Description"></textarea>
+      <input type="number" id="purchasePrice" name="purchasePrice" ngModel required placeholder="Prix achat" />
     </div>
     <div>
-      <label for="registrationStartDate">Date de péremption</label>
-      <input type="date" id="registrationStartDate" name="registrationStartDate" ngModel [class.date-filled]="createForm.value.registrationStartDate" required />
+      <input type="number" id="salePrice" name="salePrice" ngModel required placeholder="Prix revente" />
     </div>
-
-
     <div>
-      <input type="number" id="maxParticipants" name="maxParticipants" ngModel required placeholder="Quantité disponible" min="0" />
+      <label for="expirationDate">Date de péremption</label>
+      <input type="date" id="expirationDate" name="expirationDate" ngModel [class.date-filled]="createForm.value.dateExpiration" required />
+    </div>
+    <div>
+      <input type="number" id="quantity" name="quantity" ngModel required placeholder="Quantité" min="1" />
     </div>
     <button type="submit" [disabled]="!createForm.valid">Ajouter un produit</button>
   </form>
 </div>
+

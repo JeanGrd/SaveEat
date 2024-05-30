@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import {Observable, of} from 'rxjs';
 import jwt_decode from 'jwt-decode'; // Importation du module jwt-decode pour décoder le token JWT
 
 interface DecodedToken {
@@ -18,7 +18,12 @@ export class AuthService {
 
   // Vérifie les informations de connexion
   checkLogin(login: any): Observable<any> {
-    return this.http.post(this.apiUrl + `/login`, login);
+    return of({
+      token: 'fake-jwt-token', // Token JWT factice
+      message: 'Logged in' // Message de connexion réussie
+    });
+
+    // this.http.post(this.apiUrl + `/login`, login);
   }
 
   // Définit le token dans le stockage local

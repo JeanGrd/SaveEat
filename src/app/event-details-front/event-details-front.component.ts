@@ -1,6 +1,6 @@
 // Importation des modules nécessaires
 import { Component, OnInit } from '@angular/core';
-import { StockService } from '../stock.service'; // Utilisation du service StockItemService
+import { ProductService } from '../product.service'; // Utilisation du service ProductService
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
@@ -10,23 +10,34 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 
 export class EventDetailsFrontComponent implements OnInit {
-  stockItem: any; // Variable pour stocker les détails de l'article en stock
+  product: any; // Variable pour stocker les détails du produit
   isLoading: boolean = true; // Variable pour indiquer si les données sont en train de se charger
 
   constructor(
-    private stockItemService: StockService, // Injection du service StockItemService
+    private productService: ProductService, // Injection du service ProductService
     private route: ActivatedRoute,
     private router: Router,
   ) {}
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
-      const productId = params['productID']; // Récupération de l'ID du produit depuis les paramètres de la route
-      this.stockItemService.getStockItem(productId).subscribe(item => {
-        this.stockItem = item; // Stockage des détails de l'article en stock
-        this.isLoading = false; // Indication que le chargement est terminé
-      });
+      console.log(params['productID']);
+      const productId = +params['productID']; // Récupération de l'ID du produit depuis les paramètres de la route
+      if (!isNaN(productId)) {
+        this.productService.getProductById(productId).subscribe({
+          next: (item) => {
+            this.product = item; // Stockage des détails du produit
+            this.isLoading = false; // Indication que le chargement est terminé
+          },
+          error: (error) => {
+            console.error('Error fetching product details:', error);
+            this.isLoading = false; // Update loading state even on error
+          }
+        });
+      } else {
+        console.error('Invalid product ID');
+        this.isLoading = false; // Ensure loading state is handled in case of error
+      }
     });
   }
-
 }

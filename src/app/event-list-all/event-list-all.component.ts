@@ -1,9 +1,8 @@
-// event-list.component.ts
-import {Component, OnInit} from '@angular/core';
-import {EventService} from '../event.service'; // Import du service EventService pour interagir avec les données d'événements
-import {Router} from '@angular/router'; // Import du module Router pour naviguer entre les composants
-import {MessageService} from '../message.service'; // Import du service MessageService pour afficher des messages
-import {ChangeDetectorRef} from '@angular/core'; // Import de ChangeDetectorRef pour déclencher la détection des changements dans la vue
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
+import { ProductService } from '../product.service';
+import { Router } from '@angular/router';
+import { MessageService } from '../message.service';
+import {StatisticsService} from "../statistics.service";
 
 // Décorateur du composant avec son sélecteur, son modèle de vue et sa feuille de style
 @Component({
@@ -12,74 +11,64 @@ import {ChangeDetectorRef} from '@angular/core'; // Import de ChangeDetectorRef 
   styleUrls: ['./event-list-all.component.css']
 })
 export class EventListAllComponent implements OnInit {
-  events: any[] = []; // Stocke la liste d'événements
-  currentPage: number = 1; // Stocke la page courante de la liste
-  hasMoreEvents: boolean = true; // Indique s'il reste des événements à charger
-  searchTerm: string = ''; // Stocke le terme de recherche pour filtrer les événements
-
+  products: any[] = [];  // Array to hold products
+  currentPage: number = 1;
+  hasMorePages: boolean = false;
+  searchStr: string = '';
   constructor(
-    private eventService: EventService,
+    private productService: ProductService,
     private router: Router,
     private messageService: MessageService,
     private changeDetector: ChangeDetectorRef,
-  ) {
-  }
+    private statisticsService: StatisticsService,
 
-  // Cette méthode est déclenchée après la création du composant par Angular
+  ) {}
+
   ngOnInit(): void {
-    this.loadEvents();
+    this.fetchProductsAndQuantities();
   }
 
-  // Cette méthode charge les événements de la page courante
-  loadEvents(): void {
-    this.eventService.getEvents(this.currentPage, this.searchTerm).subscribe(data => {
-      this.hasMoreEvents = data.total > this.currentPage * 10;
-      this.events = data.events;
-      this.changeDetector.detectChanges();
+  fetchProductsAndQuantities(): void {
+    this.productService.getAllProducts().subscribe(products => {
+      this.products = products; // Assuming the API returns an array of products
+      this.products.forEach(product => {
+        this.statisticsService.getQuantityByProductId(product.PRODUCT_ID).subscribe(quantity => {
+          product.quantity = quantity.quantity;
+          this.changeDetector.detectChanges();
+        });
+      });
     });
   }
 
-  // Cette méthode est déclenchée lorsque l'utilisateur effectue une recherche
-  onSearch(): void {
-    this.currentPage = 1;
-    this.loadEvents();
+  showDetails(productId: number): void {
+    this.router.navigate(['/dashboard/product', productId]);
   }
 
-  // Cette méthode redirige l'utilisateur vers la page de création d'un événement
-  create(): void {
-    this.router.navigate(['/dashboard/create']);
-  }
-
-  // Cette méthode redirige l'utilisateur vers la page de détails d'un événement
-  showDetails(eventId: number): void {
-    this.router.navigate(['/dashboard/', eventId]);
-  }
-
-  // Cette méthode supprime un événement et met à jour la liste des événements
-  deleteEvent(eventId: number): void {
-    this.eventService.deleteEvent(eventId).subscribe(
+  delete(productId: number): void {
+    this.productService.deleteProduct(productId).subscribe(
       () => {
-        this.events = this.events.filter(event => event.id !== eventId);
-        this.messageService.showMessage('Événement supprimé avec succès !', 'success');
+        this.products = this.products.filter(product => product.id !== productId);
+        this.messageService.showMessage('Produit supprimé avec succès !', 'success');
       },
       error => {
-        console.error('Erreur lors de la suppression de l\'événement:', error);
-        this.messageService.showMessage('Erreur lors de la suppression de l\'événement.', 'error');
+        console.error('Erreur lors de la suppression du produit:', error);
+        this.messageService.showMessage('Erreur lors de la suppression du produit.', 'error');
       }
     );
   }
 
-  // Cette méthode est déclenchée lorsque l'utilisateur veut voir la page suivante de la liste d'événements
   nextPage(): void {
     this.currentPage += 1;
-    this.loadEvents();
+    this.fetchProductsAndQuantities();
   }
 
-  // Cette méthode est déclenchée lorsque l'utilisateur veut voir la page précédente de la liste d'événements
   previousPage(): void {
-    if (this.currentPage > 1) {
-      this.currentPage -= 1;
-      this.loadEvents();
-    }
+    this.currentPage -= 1;
+    this.fetchProductsAndQuantities();
+  }
+
+  searchProducts(): void {
+    this.currentPage = 1;
+    this.fetchProductsAndQuantities();
   }
 }

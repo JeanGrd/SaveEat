@@ -1,0 +1,22 @@
+.btn-create {
+  background-color: #1acead;
+  color: #fff;
+  font-weight: 500;
+  padding: 17px 24px;
+  margin: 30px 0;
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1rem;
+  transition-duration: 0.4s;
+}
+
+/* Alignement horizontal centré */
+.center-horizontal {
+  display: flex;
+  justify-content: center;
+}
+

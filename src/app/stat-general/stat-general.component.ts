@@ -1,8 +1,7 @@
-// stat-general.component.ts
-import {Component, OnInit, OnDestroy} from '@angular/core';
-import {EventService} from "../event.service";
-import {ParticipantService} from "../participant.service";
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
+import { StatisticsService } from "../statistics.service";
+import { ProductService } from "../product.service";
 
 @Component({
   selector: 'app-stat-general',
@@ -11,32 +10,27 @@ import { Subscription } from 'rxjs';
 })
 export class StatGeneralComponent implements OnInit, OnDestroy {
   total: any;
-  average: any;
-  eventDeletedSubscription!: Subscription;
+  private statisticsSubscription: Subscription = new Subscription();
 
   constructor(
-    private EventService: EventService,
-    private ParticipantService: ParticipantService
-  ) {
-  }
+    private productService: ProductService,
+    private statisticsService: StatisticsService,
+  ) {}
 
   ngOnInit(): void {
     this.getGeneralStats();
-    this.eventDeletedSubscription = this.EventService.eventDeleted.subscribe(() => {
-      this.getGeneralStats();
-    });
   }
 
   ngOnDestroy(): void {
-    this.eventDeletedSubscription.unsubscribe();
+    // Vérifiez si l'abonnement est actif avant de désabonner
+    if (this.statisticsSubscription) {
+      this.statisticsSubscription.unsubscribe();
+    }
   }
 
   getGeneralStats(): void {
-    this.EventService.getTotalEvent().subscribe((event_count) => {
-      this.total = event_count;
-    });
-    this.ParticipantService.getAverageParticipants().subscribe((average) => {
-      this.average = average;
+    this.statisticsSubscription = this.statisticsService.getTotalUnitsInStock().subscribe((stock_count) => {
+      this.total = stock_count;
     });
   }
 }

@@ -35,4 +35,8 @@ export class ProductService {
   deleteProduct(productId: number): Observable<any> {
     return this.http.delete(`${this.apiUrl}/${productId}`);
   }
+
+  getCategoryById(productId: number): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/${productId}/categoryId`);
+  }
 }

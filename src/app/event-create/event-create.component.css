@@ -57,7 +57,7 @@ form {
   z-index: 1;
 }
 
-input, textarea, input[type="date"] {
+input, textarea, input[type="date"], select {
   border: 1px solid #e3e3e3;
   padding: 0.5rem;
   font-size: 1rem;
@@ -68,6 +68,10 @@ input, textarea, input[type="date"] {
   border-radius: 0;
   color: #e0dede;
   margin-left: -38%;
+}
+
+select {
+  color: #1f1f1f;
 }
 
 textarea {

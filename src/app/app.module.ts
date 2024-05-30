@@ -25,6 +25,8 @@ import { FormulaireInscriptionComponent } from './formulaire-inscription/formula
 import { NgxPaginationModule } from 'ngx-pagination';
 import { HeaderBackComponent } from './header-back/header-back.component';
 import { ContactComponent } from './contact/contact.component';
+import { UnitsListComponent } from './units-list/units-list.component';
+import { UnitsListOpenComponent } from './units-list-open/units-list-open.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +50,8 @@ import { ContactComponent } from './contact/contact.component';
     FormulaireInscriptionComponent,
     HeaderBackComponent,
     ContactComponent,
+    UnitsListComponent,
+    UnitsListOpenComponent,
   ],
   imports: [
     BrowserModule,

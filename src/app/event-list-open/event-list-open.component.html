@@ -16,7 +16,7 @@
   <div class="event-list">
     <div class="event-card" [ngClass]="{'dark': index % 2 === 1}" *ngFor="let stock of products; let index = index">
       <h3>{{ stock.NAME }}</h3>
-      <p>{{ stock.CATEGORY_ID }} €</p>
+      <p>Quantité : {{ stock.quantity }}</p>
 
       <!-- Bouton de détails -->
       <button class="btn-edit" (click)="showDetails(stock.PRODUCT_ID)">Détails</button>

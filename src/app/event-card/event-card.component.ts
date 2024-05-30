@@ -1,26 +1,27 @@
-import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute} from "@angular/router"; // Importe ActivatedRoute pour accéder aux paramètres de l'URL
-import {StockService} from "../stock.service"; // Importe EventService pour récupérer les données de l'événement
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from "@angular/router";
+import { ProductService } from "../product.service"; // Change to import ProductService
 
-// Définit le décorateur du composant avec son sélecteur, son modèle de vue et sa feuille de style
 @Component({
   selector: 'app-event-card',
   templateUrl: './event-card.component.html',
   styleUrls: ['./event-card.component.css']
 })
-// Le composant implémente l'interface OnInit, ce qui signifie qu'il doit contenir une méthode ngOnInit
 export class EventCardComponent implements OnInit {
-  stock: any; // Utilisez un objet pour stocker les détails de l'article en stock, pas un tableau.
-  stockId?: number;
+  product: any; // Changed from 'stock' to 'product'
+  productId?: number; // Changed from 'stockId' to 'productId'
 
-  constructor(private route: ActivatedRoute, private stockService: StockService) {}
+  constructor(
+    private route: ActivatedRoute,
+    private productService: ProductService // Changed from StockService to ProductService
+  ) {}
 
   ngOnInit(): void {
     this.route.params.subscribe((params) => {
-      this.stockId = +params['id']; // Assurez-vous que le nom du paramètre correspond à celui défini dans votre route.
-      if (this.stockId) {
-        this.stockService.getStockItem(this.stockId).subscribe((stock) => {
-          this.stock = stock;
+      this.productId = +params['productID'];
+      if (this.productId) {
+        this.productService.getProductById(this.productId).subscribe((product) => {
+          this.product = product;
         });
       }
     });

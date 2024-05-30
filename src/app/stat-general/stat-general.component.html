@@ -5,11 +5,7 @@
 
   <!-- Cartes de statistiques pour le nombre d'événements -->
   <div class="stat-card" *ngFor="let stats of total">
-    <p>Nombre d'événements : {{ stats.event_count }}</p>
+    <p>Nombre de produits total : {{ stats.TOTAL_UNITS }}</p>
   </div>
 
-  <!-- Cartes de statistiques pour le nombre moyen de participants par événement -->
-  <div class="stat-card" *ngFor="let stats of average">
-    <p>Nombre moyen de participants par événement : {{ stats.average_participants }}</p>
-  </div>
 </div>
